@@ -1,0 +1,58 @@
+﻿@model PointJalkahoitoDemoJM.Models.Toimipiste
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Toimipiste</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Toimipiste_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Toimipiste_Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Huomio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Huomio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hoitopaikka1.Hoitopaikan_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoitopaikka1.Hoitopaikan_Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Osoite1.Katuosoite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Osoite1.Katuosoite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puhelin1.Puhelinnumero_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puhelin1.Puhelinnumero_1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Toimipiste_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

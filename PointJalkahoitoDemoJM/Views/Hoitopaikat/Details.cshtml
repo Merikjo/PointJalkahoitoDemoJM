@@ -1,0 +1,50 @@
+﻿@model PointJalkahoitoDemoJM.Models.Hoitopaikka
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hoitopaikka</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hoitopaikan_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoitopaikan_Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hoitopaikan_Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoitopaikan_Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Toimipiste.Toimipiste_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Toimipiste.Toimipiste_Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Varaus.Palvelun_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Varaus.Palvelun_Nimi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Hoitopaikka_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -88,6 +88,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -197,14 +199,69 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AsiakkaatController.cs" />
+    <Compile Include="Controllers\HenkilokuntasController.cs" />
+    <Compile Include="Controllers\HoitajatController.cs" />
+    <Compile Include="Controllers\HoitopaikatController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KayttajatController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OsoitteetController.cs" />
+    <Compile Include="Controllers\PalvelutController.cs" />
+    <Compile Include="Controllers\PuhelimetController.cs" />
+    <Compile Include="Controllers\ToimipisteetController.cs" />
+    <Compile Include="Controllers\VarauksetController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Asiakas.cs">
+      <DependentUpon>PointCustomManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Henkilokunta.cs">
+      <DependentUpon>PointCustomManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hoitaja.cs">
+      <DependentUpon>PointCustomManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hoitopaikka.cs">
+      <DependentUpon>PointCustomManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Kayttaja.cs">
+      <DependentUpon>PointCustomManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Osoite.cs">
+      <DependentUpon>PointCustomManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Palvelu.cs">
+      <DependentUpon>PointCustomManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PointCustomManagement.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PointCustomManagement.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PointCustomManagement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PointCustomManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PointCustomManagement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PointCustomManagement.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Puhelin.cs">
+      <DependentUpon>PointCustomManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Toimipiste.cs">
+      <DependentUpon>PointCustomManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Varaus.cs">
+      <DependentUpon>PointCustomManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -228,8 +285,25 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="Models\PointCustomManagement.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PointCustomManagement.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PointCustomManagement.edmx.diagram">
+      <DependentUpon>PointCustomManagement.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\PointJalkahoitoDemoJM.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Models\PointCustomManagement.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PointCustomManagement.edmx</DependentUpon>
+      <LastGenOutput>PointCustomManagement.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PointCustomManagement.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PointCustomManagement.edmx</DependentUpon>
+      <LastGenOutput>PointCustomManagement.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -283,6 +357,56 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\Asiakkaat\Create.cshtml" />
+    <Content Include="Views\Asiakkaat\Delete.cshtml" />
+    <Content Include="Views\Asiakkaat\Details.cshtml" />
+    <Content Include="Views\Asiakkaat\Edit.cshtml" />
+    <Content Include="Views\Asiakkaat\Index.cshtml" />
+    <Content Include="Views\Henkilokuntas\Create.cshtml" />
+    <Content Include="Views\Henkilokuntas\Delete.cshtml" />
+    <Content Include="Views\Henkilokuntas\Details.cshtml" />
+    <Content Include="Views\Henkilokuntas\Edit.cshtml" />
+    <Content Include="Views\Henkilokuntas\Index.cshtml" />
+    <Content Include="Views\Hoitajat\Create.cshtml" />
+    <Content Include="Views\Hoitajat\Delete.cshtml" />
+    <Content Include="Views\Hoitajat\Details.cshtml" />
+    <Content Include="Views\Hoitajat\Edit.cshtml" />
+    <Content Include="Views\Hoitajat\Index.cshtml" />
+    <Content Include="Views\Hoitopaikat\Create.cshtml" />
+    <Content Include="Views\Hoitopaikat\Delete.cshtml" />
+    <Content Include="Views\Hoitopaikat\Details.cshtml" />
+    <Content Include="Views\Hoitopaikat\Edit.cshtml" />
+    <Content Include="Views\Hoitopaikat\Index.cshtml" />
+    <Content Include="Views\Kayttajat\Create.cshtml" />
+    <Content Include="Views\Kayttajat\Delete.cshtml" />
+    <Content Include="Views\Kayttajat\Details.cshtml" />
+    <Content Include="Views\Kayttajat\Edit.cshtml" />
+    <Content Include="Views\Kayttajat\Index.cshtml" />
+    <Content Include="Views\Osoitteet\Create.cshtml" />
+    <Content Include="Views\Osoitteet\Delete.cshtml" />
+    <Content Include="Views\Osoitteet\Details.cshtml" />
+    <Content Include="Views\Osoitteet\Edit.cshtml" />
+    <Content Include="Views\Osoitteet\Index.cshtml" />
+    <Content Include="Views\Palvelut\Create.cshtml" />
+    <Content Include="Views\Palvelut\Delete.cshtml" />
+    <Content Include="Views\Palvelut\Details.cshtml" />
+    <Content Include="Views\Palvelut\Edit.cshtml" />
+    <Content Include="Views\Palvelut\Index.cshtml" />
+    <Content Include="Views\Puhelimet\Create.cshtml" />
+    <Content Include="Views\Puhelimet\Delete.cshtml" />
+    <Content Include="Views\Puhelimet\Details.cshtml" />
+    <Content Include="Views\Puhelimet\Edit.cshtml" />
+    <Content Include="Views\Puhelimet\Index.cshtml" />
+    <Content Include="Views\Toimipisteet\Create.cshtml" />
+    <Content Include="Views\Toimipisteet\Delete.cshtml" />
+    <Content Include="Views\Toimipisteet\Details.cshtml" />
+    <Content Include="Views\Toimipisteet\Edit.cshtml" />
+    <Content Include="Views\Toimipisteet\Index.cshtml" />
+    <Content Include="Views\Varaukset\Create.cshtml" />
+    <Content Include="Views\Varaukset\Delete.cshtml" />
+    <Content Include="Views\Varaukset\Details.cshtml" />
+    <Content Include="Views\Varaukset\Edit.cshtml" />
+    <Content Include="Views\Varaukset\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -290,6 +414,9 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PointJalkahoitoDemoJM.Models.Toimipiste>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Toimipiste_Nimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Huomio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hoitopaikka1.Hoitopaikan_Nimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Osoite1.Katuosoite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Puhelin1.Puhelinnumero_1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Toimipiste_Nimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Huomio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hoitopaikka1.Hoitopaikan_Nimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Osoite1.Katuosoite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Puhelin1.Puhelinnumero_1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Toimipiste_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Toimipiste_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Toimipiste_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,106 @@
+﻿@model PointJalkahoitoDemoJM.Models.Hoitaja
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hoitaja</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Etunimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Etunimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sukunimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sukunimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Henkilotunnus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Henkilotunnus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Huomiot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Huomiot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sahkoposti)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sahkoposti)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asiakas1.Etunimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asiakas1.Etunimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Osoite.Katuosoite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Osoite.Katuosoite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puhelin.Puhelinnumero_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puhelin.Puhelinnumero_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Varaus.Palvelun_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Varaus.Palvelun_Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Palvelu.Palvelun_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Palvelu.Palvelun_Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kayttaja.Käyttäjätunnus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kayttaja.Käyttäjätunnus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Hoitaja_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,74 @@
+﻿@model PointJalkahoitoDemoJM.Models.Osoite
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Osoite</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Katuosoite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Katuosoite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Postinumero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Postinumero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Postitoimipaikka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Postitoimipaikka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asiakas1.Etunimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asiakas1.Etunimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Henkilokunta1.Etunimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Henkilokunta1.Etunimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hoitaja1.Etunimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoitaja1.Etunimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Toimipiste.Toimipiste_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Toimipiste.Toimipiste_Nimi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Osoite_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

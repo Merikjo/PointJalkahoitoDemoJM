@@ -1,0 +1,64 @@
+﻿@model PointJalkahoitoDemoJM.Models.Toimipiste
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Toimipiste</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Toimipiste_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Toimipiste_Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Huomio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Huomio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hoitopaikka1.Hoitopaikan_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoitopaikka1.Hoitopaikan_Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Osoite1.Katuosoite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Osoite1.Katuosoite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puhelin1.Puhelinnumero_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puhelin1.Puhelinnumero_1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

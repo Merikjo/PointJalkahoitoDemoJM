@@ -1,0 +1,93 @@
+﻿@model IEnumerable<PointJalkahoitoDemoJM.Models.Hoitaja>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Etunimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sukunimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Henkilotunnus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Huomiot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sahkoposti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asiakas1.Etunimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Osoite.Katuosoite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Puhelin.Puhelinnumero_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Varaus.Palvelun_Nimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Palvelu.Palvelun_Nimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kayttaja.Käyttäjätunnus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Etunimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sukunimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Henkilotunnus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Huomiot)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sahkoposti)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Asiakas1.Etunimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Osoite.Katuosoite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Puhelin.Puhelinnumero_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Varaus.Palvelun_Nimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Palvelu.Palvelun_Nimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kayttaja.Käyttäjätunnus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Hoitaja_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Hoitaja_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Hoitaja_id })
+        </td>
+    </tr>
+}
+
+</table>

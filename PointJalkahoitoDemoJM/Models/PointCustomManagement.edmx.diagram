@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e8b7c6999096458b9442d2cced164e1f" Name="Diagram1">
+        <EntityTypeShape EntityType="JohaMeriSQL1Model.Asiakas" Width="1.5" PointX="7.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JohaMeriSQL1Model.Henkilokunta" Width="1.5" PointX="12" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JohaMeriSQL1Model.Hoitaja" Width="1.5" PointX="9.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JohaMeriSQL1Model.Hoitopaikka" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JohaMeriSQL1Model.Kayttaja" Width="1.5" PointX="14.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JohaMeriSQL1Model.Osoite" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JohaMeriSQL1Model.Palvelu" Width="1.5" PointX="16.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JohaMeriSQL1Model.Puhelin" Width="1.5" PointX="17.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JohaMeriSQL1Model.Toimipiste" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JohaMeriSQL1Model.Varaus" Width="1.5" PointX="14.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Asiakas_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Asiakas_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Asiakas_ToTable_2" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Asiakas_ToTable_3" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Asiakas_ToTable_4" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Asiakas_ToTable_5" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Hoitaja_ToTable_2" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Kayttaja_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Osoite_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Palvelu_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Puhelin_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Varaus_ToTable_3" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Henkilokunta_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Henkilokunta_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Henkilokunta_ToTable_2" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Henkilokunta_ToTable_3" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Henkilokunta_ToTable_4" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Henkilokunta_ToTable_5" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Kayttaja_ToTable_3" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Osoite_ToTable_2" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Puhelin_ToTable_2" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Varaus_ToTable_4" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Hoitaja_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Hoitaja_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Hoitaja_ToTable_3" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Hoitaja_ToTable_4" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Hoitaja_ToTable_5" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Kayttaja_ToTable_2" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Osoite_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Palvelu_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Puhelin_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Varaus_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Hoitopaikka_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Hoitopaikka_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Toimipiste_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Varaus_ToTable_2" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Osoite_ToTable_3" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Toimipiste_ToTable1" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Palvelu_ToTable_2" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Palvelu_ToTable_3" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Varaus_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Puhelin_ToTable_3" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Toimipiste_ToTable_2" ManuallyRouted="false" />
+        <AssociationConnector Association="JohaMeriSQL1Model.FK_Varaus_ToTable_5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,114 @@
+﻿@model PointJalkahoitoDemoJM.Models.Varaus
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Varaus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Palvelun_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Palvelun_Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alku)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alku)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loppu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loppu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pvm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pvm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Huomio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Huomio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asiakas1.Etunimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asiakas1.Etunimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Henkilokunta1.Etunimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Henkilokunta1.Etunimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hoitaja1.Etunimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoitaja1.Etunimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hoitopaikka1.Hoitopaikan_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoitopaikka1.Hoitopaikan_Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Palvelu1.Palvelun_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Palvelu1.Palvelun_Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Toimipiste.Toimipiste_Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Toimipiste.Toimipiste_Nimi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Varaus_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

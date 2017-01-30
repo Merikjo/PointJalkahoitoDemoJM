@@ -1,0 +1,1998 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="JohaMeriSQL1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Asiakas">
+          <Key>
+            <PropertyRef Name="Asiakas_id" />
+          </Key>
+          <Property Name="Asiakas_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Etunimi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sukunimi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Henkilotunnus" Type="nvarchar" MaxLength="20" />
+          <Property Name="Huomiot" Type="nvarchar" MaxLength="300" />
+          <Property Name="Sahkoposti" Type="nvarchar" MaxLength="100" />
+          <Property Name="Käyttäjä_id" Type="int" />
+          <Property Name="Osoite_id" Type="int" />
+          <Property Name="Puhelin_id" Type="int" />
+          <Property Name="Hoitaja_id" Type="int" />
+          <Property Name="Varaus_id" Type="int" />
+          <Property Name="Palvelu_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Henkilokunta">
+          <Key>
+            <PropertyRef Name="Henkilokunta_id" />
+          </Key>
+          <Property Name="Henkilokunta_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Etunimi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sukunimi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Henkilotunnus" Type="nvarchar" MaxLength="20" />
+          <Property Name="Huomiot" Type="nvarchar" MaxLength="300" />
+          <Property Name="Sahkoposti" Type="nvarchar" MaxLength="100" />
+          <Property Name="Käyttäjä_id" Type="int" />
+          <Property Name="Osoite_id" Type="int" />
+          <Property Name="Puhelin_id" Type="int" />
+          <Property Name="Asiakas_id" Type="int" />
+          <Property Name="Hoitaja_id" Type="int" />
+          <Property Name="Varaus_id" Type="int" />
+          <Property Name="Palvelu_id" Type="int" />
+          <Property Name="Kurssi_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Hoitaja">
+          <Key>
+            <PropertyRef Name="Hoitaja_id" />
+          </Key>
+          <Property Name="Hoitaja_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Etunimi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sukunimi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Henkilotunnus" Type="nvarchar" MaxLength="20" />
+          <Property Name="Huomiot" Type="nvarchar" MaxLength="300" />
+          <Property Name="Sahkoposti" Type="nvarchar" MaxLength="100" />
+          <Property Name="Käyttäjä_id" Type="int" />
+          <Property Name="Osoite_id" Type="int" />
+          <Property Name="Puhelin_id" Type="int" />
+          <Property Name="Asiakas_id" Type="int" />
+          <Property Name="Varaus_id" Type="int" />
+          <Property Name="Palvelu_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Hoitopaikka">
+          <Key>
+            <PropertyRef Name="Hoitopaikka_id" />
+          </Key>
+          <Property Name="Hoitopaikka_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Hoitopaikan_Nimi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hoitopaikan_Numero" Type="nvarchar" MaxLength="10" />
+          <Property Name="Toimipiste_id" Type="int" />
+          <Property Name="Varaus_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Kayttaja">
+          <Key>
+            <PropertyRef Name="Käyttäjä_id" />
+          </Key>
+          <Property Name="Käyttäjä_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Käyttäjätunnus" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Salasana" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Asiakas_id" Type="int" />
+          <Property Name="Hoitaja_Id" Type="int" />
+          <Property Name="Henkilokunta_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Osoite">
+          <Key>
+            <PropertyRef Name="Osoite_id" />
+          </Key>
+          <Property Name="Osoite_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Katuosoite" Type="nvarchar" MaxLength="100" />
+          <Property Name="Postinumero" Type="nvarchar" MaxLength="10" />
+          <Property Name="Postitoimipaikka" Type="nvarchar" MaxLength="50" />
+          <Property Name="Asiakas_id" Type="int" />
+          <Property Name="Hoitaja_id" Type="int" />
+          <Property Name="Henkilokunta_id" Type="int" />
+          <Property Name="Toimipiste_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Palvelu">
+          <Key>
+            <PropertyRef Name="Palvelu_id" />
+          </Key>
+          <Property Name="Palvelu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Palvelun_Nimi" Type="nvarchar" MaxLength="20" />
+          <Property Name="Palvelun_Kesto" Type="varchar" MaxLength="20" />
+          <Property Name="Palvelun_Hinta" Type="varchar" MaxLength="20" />
+          <Property Name="Asiakas_id" Type="int" />
+          <Property Name="Hoitaja_id" Type="int" />
+          <Property Name="Toimipiste_id" Type="int" />
+          <Property Name="Varaus_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Puhelin">
+          <Key>
+            <PropertyRef Name="Puhelin_id" />
+          </Key>
+          <Property Name="Puhelin_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Puhelinnumero_1" Type="nvarchar" MaxLength="20" />
+          <Property Name="Puhelinnumero_2" Type="nvarchar" MaxLength="20" />
+          <Property Name="Puhelinnumero_3" Type="nvarchar" MaxLength="20" />
+          <Property Name="Asiakas_id" Type="int" />
+          <Property Name="Hoitaja_id" Type="int" />
+          <Property Name="Henkilokunta_id" Type="int" />
+          <Property Name="Toimipiste_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Toimipiste">
+          <Key>
+            <PropertyRef Name="Toimipiste_id" />
+          </Key>
+          <Property Name="Toimipiste_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Toimipiste_Nimi" Type="nvarchar" MaxLength="20" />
+          <Property Name="Huomio" Type="nvarchar" MaxLength="300" />
+          <Property Name="Hoitopaikka_id" Type="int" />
+          <Property Name="Osoite_id" Type="int" />
+          <Property Name="Puhelin_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Varaus">
+          <Key>
+            <PropertyRef Name="Varaus_id" />
+          </Key>
+          <Property Name="Varaus_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Palvelun_Nimi" Type="nvarchar" MaxLength="100" />
+          <Property Name="Alku" Type="nvarchar" MaxLength="10" />
+          <Property Name="Loppu" Type="nvarchar" MaxLength="10" />
+          <Property Name="pvm" Type="datetime" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Huomio" Type="nvarchar" MaxLength="300" />
+          <Property Name="Hoitaja_id" Type="int" />
+          <Property Name="Hoitopaikka_id" Type="int" />
+          <Property Name="Asiakas_id" Type="int" />
+          <Property Name="Henkilokunta_id" Type="int" />
+          <Property Name="Toimipiste_id" Type="int" />
+          <Property Name="Palvelu_id" Type="int" />
+        </EntityType>
+        <Association Name="FK_Asiakas_ToTable">
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="0..1" />
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osoite">
+              <PropertyRef Name="Osoite_id" />
+            </Principal>
+            <Dependent Role="Asiakas">
+              <PropertyRef Name="Osoite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asiakas_ToTable_1">
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="0..1" />
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puhelin">
+              <PropertyRef Name="Puhelin_id" />
+            </Principal>
+            <Dependent Role="Asiakas">
+              <PropertyRef Name="Puhelin_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asiakas_ToTable_2">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Asiakas">
+              <PropertyRef Name="Hoitaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asiakas_ToTable_3">
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="0..1" />
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Varaus">
+              <PropertyRef Name="Varaus_id" />
+            </Principal>
+            <Dependent Role="Asiakas">
+              <PropertyRef Name="Varaus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asiakas_ToTable_4">
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="0..1" />
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Palvelu">
+              <PropertyRef Name="Palvelu_id" />
+            </Principal>
+            <Dependent Role="Asiakas">
+              <PropertyRef Name="Palvelu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asiakas_ToTable_5">
+          <End Role="Kayttaja" Type="Self.Kayttaja" Multiplicity="0..1" />
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kayttaja">
+              <PropertyRef Name="Käyttäjä_id" />
+            </Principal>
+            <Dependent Role="Asiakas">
+              <PropertyRef Name="Käyttäjä_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Henkilokunta_ToTable">
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="0..1" />
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osoite">
+              <PropertyRef Name="Osoite_id" />
+            </Principal>
+            <Dependent Role="Henkilokunta">
+              <PropertyRef Name="Osoite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Henkilokunta_ToTable_1">
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="0..1" />
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puhelin">
+              <PropertyRef Name="Puhelin_id" />
+            </Principal>
+            <Dependent Role="Henkilokunta">
+              <PropertyRef Name="Puhelin_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Henkilokunta_ToTable_2">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Henkilokunta">
+              <PropertyRef Name="Hoitaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Henkilokunta_ToTable_3">
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="0..1" />
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Varaus">
+              <PropertyRef Name="Varaus_id" />
+            </Principal>
+            <Dependent Role="Henkilokunta">
+              <PropertyRef Name="Varaus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Henkilokunta_ToTable_4">
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="0..1" />
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Palvelu">
+              <PropertyRef Name="Palvelu_id" />
+            </Principal>
+            <Dependent Role="Henkilokunta">
+              <PropertyRef Name="Palvelu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Henkilokunta_ToTable_5">
+          <End Role="Kayttaja" Type="Self.Kayttaja" Multiplicity="0..1" />
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kayttaja">
+              <PropertyRef Name="Käyttäjä_id" />
+            </Principal>
+            <Dependent Role="Henkilokunta">
+              <PropertyRef Name="Käyttäjä_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitaja_ToTable">
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="0..1" />
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osoite">
+              <PropertyRef Name="Osoite_id" />
+            </Principal>
+            <Dependent Role="Hoitaja">
+              <PropertyRef Name="Osoite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitaja_ToTable_1">
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="0..1" />
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puhelin">
+              <PropertyRef Name="Puhelin_id" />
+            </Principal>
+            <Dependent Role="Hoitaja">
+              <PropertyRef Name="Puhelin_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitaja_ToTable_2">
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="0..1" />
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asiakas">
+              <PropertyRef Name="Asiakas_id" />
+            </Principal>
+            <Dependent Role="Hoitaja">
+              <PropertyRef Name="Asiakas_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitaja_ToTable_3">
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="0..1" />
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Varaus">
+              <PropertyRef Name="Varaus_id" />
+            </Principal>
+            <Dependent Role="Hoitaja">
+              <PropertyRef Name="Varaus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitaja_ToTable_4">
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="0..1" />
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Palvelu">
+              <PropertyRef Name="Palvelu_id" />
+            </Principal>
+            <Dependent Role="Hoitaja">
+              <PropertyRef Name="Palvelu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitaja_ToTable_5">
+          <End Role="Kayttaja" Type="Self.Kayttaja" Multiplicity="0..1" />
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kayttaja">
+              <PropertyRef Name="Käyttäjä_id" />
+            </Principal>
+            <Dependent Role="Hoitaja">
+              <PropertyRef Name="Käyttäjä_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitopaikka_ToTable">
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="0..1" />
+          <End Role="Hoitopaikka" Type="Self.Hoitopaikka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toimipiste">
+              <PropertyRef Name="Toimipiste_id" />
+            </Principal>
+            <Dependent Role="Hoitopaikka">
+              <PropertyRef Name="Toimipiste_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitopaikka_ToTable_1">
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="0..1" />
+          <End Role="Hoitopaikka" Type="Self.Hoitopaikka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Varaus">
+              <PropertyRef Name="Varaus_id" />
+            </Principal>
+            <Dependent Role="Hoitopaikka">
+              <PropertyRef Name="Varaus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayttaja_ToTable_1">
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="0..1" />
+          <End Role="Kayttaja" Type="Self.Kayttaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asiakas">
+              <PropertyRef Name="Asiakas_id" />
+            </Principal>
+            <Dependent Role="Kayttaja">
+              <PropertyRef Name="Asiakas_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayttaja_ToTable_2">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Kayttaja" Type="Self.Kayttaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Kayttaja">
+              <PropertyRef Name="Hoitaja_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayttaja_ToTable_3">
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="0..1" />
+          <End Role="Kayttaja" Type="Self.Kayttaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Henkilokunta">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Principal>
+            <Dependent Role="Kayttaja">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Osoite_ToTable">
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="0..1" />
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asiakas">
+              <PropertyRef Name="Asiakas_id" />
+            </Principal>
+            <Dependent Role="Osoite">
+              <PropertyRef Name="Asiakas_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Osoite_ToTable_1">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Osoite">
+              <PropertyRef Name="Hoitaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Osoite_ToTable_2">
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="0..1" />
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Henkilokunta">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Principal>
+            <Dependent Role="Osoite">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Osoite_ToTable_3">
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="0..1" />
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toimipiste">
+              <PropertyRef Name="Toimipiste_id" />
+            </Principal>
+            <Dependent Role="Osoite">
+              <PropertyRef Name="Toimipiste_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Palvelu_ToTable">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Palvelu">
+              <PropertyRef Name="Hoitaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Palvelu_ToTable_1">
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="0..1" />
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asiakas">
+              <PropertyRef Name="Asiakas_id" />
+            </Principal>
+            <Dependent Role="Palvelu">
+              <PropertyRef Name="Asiakas_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Palvelu_ToTable_2">
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="0..1" />
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toimipiste">
+              <PropertyRef Name="Toimipiste_id" />
+            </Principal>
+            <Dependent Role="Palvelu">
+              <PropertyRef Name="Toimipiste_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Palvelu_ToTable_3">
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="0..1" />
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Varaus">
+              <PropertyRef Name="Varaus_id" />
+            </Principal>
+            <Dependent Role="Palvelu">
+              <PropertyRef Name="Varaus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Puhelin_ToTable">
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="0..1" />
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asiakas">
+              <PropertyRef Name="Asiakas_id" />
+            </Principal>
+            <Dependent Role="Puhelin">
+              <PropertyRef Name="Asiakas_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Puhelin_ToTable_1">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Puhelin">
+              <PropertyRef Name="Hoitaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Puhelin_ToTable_2">
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="0..1" />
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Henkilokunta">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Principal>
+            <Dependent Role="Puhelin">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Puhelin_ToTable_3">
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="0..1" />
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toimipiste">
+              <PropertyRef Name="Toimipiste_id" />
+            </Principal>
+            <Dependent Role="Puhelin">
+              <PropertyRef Name="Toimipiste_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Toimipiste_ToTable">
+          <End Role="Hoitopaikka" Type="Self.Hoitopaikka" Multiplicity="0..1" />
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitopaikka">
+              <PropertyRef Name="Hoitopaikka_id" />
+            </Principal>
+            <Dependent Role="Toimipiste">
+              <PropertyRef Name="Hoitopaikka_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Toimipiste_ToTable_2">
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="0..1" />
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puhelin">
+              <PropertyRef Name="Puhelin_id" />
+            </Principal>
+            <Dependent Role="Toimipiste">
+              <PropertyRef Name="Puhelin_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Toimipiste_ToTable1">
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="0..1" />
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osoite">
+              <PropertyRef Name="Osoite_id" />
+            </Principal>
+            <Dependent Role="Toimipiste">
+              <PropertyRef Name="Osoite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Varaus_ToTable">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Varaus">
+              <PropertyRef Name="Hoitaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Varaus_ToTable_1">
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="0..1" />
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Palvelu">
+              <PropertyRef Name="Palvelu_id" />
+            </Principal>
+            <Dependent Role="Varaus">
+              <PropertyRef Name="Palvelu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Varaus_ToTable_2">
+          <End Role="Hoitopaikka" Type="Self.Hoitopaikka" Multiplicity="0..1" />
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitopaikka">
+              <PropertyRef Name="Hoitopaikka_id" />
+            </Principal>
+            <Dependent Role="Varaus">
+              <PropertyRef Name="Hoitopaikka_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Varaus_ToTable_3">
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="0..1" />
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asiakas">
+              <PropertyRef Name="Asiakas_id" />
+            </Principal>
+            <Dependent Role="Varaus">
+              <PropertyRef Name="Asiakas_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Varaus_ToTable_4">
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="0..1" />
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Henkilokunta">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Principal>
+            <Dependent Role="Varaus">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Varaus_ToTable_5">
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="0..1" />
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toimipiste">
+              <PropertyRef Name="Toimipiste_id" />
+            </Principal>
+            <Dependent Role="Varaus">
+              <PropertyRef Name="Toimipiste_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="JohaMeriSQL1ModelStoreContainer">
+          <EntitySet Name="Asiakas" EntityType="Self.Asiakas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Henkilokunta" EntityType="Self.Henkilokunta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hoitaja" EntityType="Self.Hoitaja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hoitopaikka" EntityType="Self.Hoitopaikka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kayttaja" EntityType="Self.Kayttaja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Osoite" EntityType="Self.Osoite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Palvelu" EntityType="Self.Palvelu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Puhelin" EntityType="Self.Puhelin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Toimipiste" EntityType="Self.Toimipiste" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Varaus" EntityType="Self.Varaus" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Asiakas_ToTable" Association="Self.FK_Asiakas_ToTable">
+            <End Role="Osoite" EntitySet="Osoite" />
+            <End Role="Asiakas" EntitySet="Asiakas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asiakas_ToTable_1" Association="Self.FK_Asiakas_ToTable_1">
+            <End Role="Puhelin" EntitySet="Puhelin" />
+            <End Role="Asiakas" EntitySet="Asiakas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asiakas_ToTable_2" Association="Self.FK_Asiakas_ToTable_2">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Asiakas" EntitySet="Asiakas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asiakas_ToTable_3" Association="Self.FK_Asiakas_ToTable_3">
+            <End Role="Varaus" EntitySet="Varaus" />
+            <End Role="Asiakas" EntitySet="Asiakas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asiakas_ToTable_4" Association="Self.FK_Asiakas_ToTable_4">
+            <End Role="Palvelu" EntitySet="Palvelu" />
+            <End Role="Asiakas" EntitySet="Asiakas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asiakas_ToTable_5" Association="Self.FK_Asiakas_ToTable_5">
+            <End Role="Kayttaja" EntitySet="Kayttaja" />
+            <End Role="Asiakas" EntitySet="Asiakas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Henkilokunta_ToTable" Association="Self.FK_Henkilokunta_ToTable">
+            <End Role="Osoite" EntitySet="Osoite" />
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Henkilokunta_ToTable_1" Association="Self.FK_Henkilokunta_ToTable_1">
+            <End Role="Puhelin" EntitySet="Puhelin" />
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Henkilokunta_ToTable_2" Association="Self.FK_Henkilokunta_ToTable_2">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Henkilokunta_ToTable_3" Association="Self.FK_Henkilokunta_ToTable_3">
+            <End Role="Varaus" EntitySet="Varaus" />
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Henkilokunta_ToTable_4" Association="Self.FK_Henkilokunta_ToTable_4">
+            <End Role="Palvelu" EntitySet="Palvelu" />
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Henkilokunta_ToTable_5" Association="Self.FK_Henkilokunta_ToTable_5">
+            <End Role="Kayttaja" EntitySet="Kayttaja" />
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitaja_ToTable" Association="Self.FK_Hoitaja_ToTable">
+            <End Role="Osoite" EntitySet="Osoite" />
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitaja_ToTable_1" Association="Self.FK_Hoitaja_ToTable_1">
+            <End Role="Puhelin" EntitySet="Puhelin" />
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitaja_ToTable_2" Association="Self.FK_Hoitaja_ToTable_2">
+            <End Role="Asiakas" EntitySet="Asiakas" />
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitaja_ToTable_3" Association="Self.FK_Hoitaja_ToTable_3">
+            <End Role="Varaus" EntitySet="Varaus" />
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitaja_ToTable_4" Association="Self.FK_Hoitaja_ToTable_4">
+            <End Role="Palvelu" EntitySet="Palvelu" />
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitaja_ToTable_5" Association="Self.FK_Hoitaja_ToTable_5">
+            <End Role="Kayttaja" EntitySet="Kayttaja" />
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitopaikka_ToTable" Association="Self.FK_Hoitopaikka_ToTable">
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+            <End Role="Hoitopaikka" EntitySet="Hoitopaikka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitopaikka_ToTable_1" Association="Self.FK_Hoitopaikka_ToTable_1">
+            <End Role="Varaus" EntitySet="Varaus" />
+            <End Role="Hoitopaikka" EntitySet="Hoitopaikka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayttaja_ToTable_1" Association="Self.FK_Kayttaja_ToTable_1">
+            <End Role="Asiakas" EntitySet="Asiakas" />
+            <End Role="Kayttaja" EntitySet="Kayttaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayttaja_ToTable_2" Association="Self.FK_Kayttaja_ToTable_2">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Kayttaja" EntitySet="Kayttaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayttaja_ToTable_3" Association="Self.FK_Kayttaja_ToTable_3">
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+            <End Role="Kayttaja" EntitySet="Kayttaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Osoite_ToTable" Association="Self.FK_Osoite_ToTable">
+            <End Role="Asiakas" EntitySet="Asiakas" />
+            <End Role="Osoite" EntitySet="Osoite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Osoite_ToTable_1" Association="Self.FK_Osoite_ToTable_1">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Osoite" EntitySet="Osoite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Osoite_ToTable_2" Association="Self.FK_Osoite_ToTable_2">
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+            <End Role="Osoite" EntitySet="Osoite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Osoite_ToTable_3" Association="Self.FK_Osoite_ToTable_3">
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+            <End Role="Osoite" EntitySet="Osoite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Palvelu_ToTable" Association="Self.FK_Palvelu_ToTable">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Palvelu" EntitySet="Palvelu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Palvelu_ToTable_1" Association="Self.FK_Palvelu_ToTable_1">
+            <End Role="Asiakas" EntitySet="Asiakas" />
+            <End Role="Palvelu" EntitySet="Palvelu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Palvelu_ToTable_2" Association="Self.FK_Palvelu_ToTable_2">
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+            <End Role="Palvelu" EntitySet="Palvelu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Palvelu_ToTable_3" Association="Self.FK_Palvelu_ToTable_3">
+            <End Role="Varaus" EntitySet="Varaus" />
+            <End Role="Palvelu" EntitySet="Palvelu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Puhelin_ToTable" Association="Self.FK_Puhelin_ToTable">
+            <End Role="Asiakas" EntitySet="Asiakas" />
+            <End Role="Puhelin" EntitySet="Puhelin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Puhelin_ToTable_1" Association="Self.FK_Puhelin_ToTable_1">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Puhelin" EntitySet="Puhelin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Puhelin_ToTable_2" Association="Self.FK_Puhelin_ToTable_2">
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+            <End Role="Puhelin" EntitySet="Puhelin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Puhelin_ToTable_3" Association="Self.FK_Puhelin_ToTable_3">
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+            <End Role="Puhelin" EntitySet="Puhelin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Toimipiste_ToTable" Association="Self.FK_Toimipiste_ToTable">
+            <End Role="Hoitopaikka" EntitySet="Hoitopaikka" />
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Toimipiste_ToTable_2" Association="Self.FK_Toimipiste_ToTable_2">
+            <End Role="Puhelin" EntitySet="Puhelin" />
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Toimipiste_ToTable1" Association="Self.FK_Toimipiste_ToTable1">
+            <End Role="Osoite" EntitySet="Osoite" />
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Varaus_ToTable" Association="Self.FK_Varaus_ToTable">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Varaus" EntitySet="Varaus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Varaus_ToTable_1" Association="Self.FK_Varaus_ToTable_1">
+            <End Role="Palvelu" EntitySet="Palvelu" />
+            <End Role="Varaus" EntitySet="Varaus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Varaus_ToTable_2" Association="Self.FK_Varaus_ToTable_2">
+            <End Role="Hoitopaikka" EntitySet="Hoitopaikka" />
+            <End Role="Varaus" EntitySet="Varaus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Varaus_ToTable_3" Association="Self.FK_Varaus_ToTable_3">
+            <End Role="Asiakas" EntitySet="Asiakas" />
+            <End Role="Varaus" EntitySet="Varaus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Varaus_ToTable_4" Association="Self.FK_Varaus_ToTable_4">
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+            <End Role="Varaus" EntitySet="Varaus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Varaus_ToTable_5" Association="Self.FK_Varaus_ToTable_5">
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+            <End Role="Varaus" EntitySet="Varaus" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JohaMeriSQL1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Asiakas">
+          <Key>
+            <PropertyRef Name="Asiakas_id" />
+          </Key>
+          <Property Name="Asiakas_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Etunimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sukunimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Henkilotunnus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Huomiot" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Sahkoposti" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Käyttäjä_id" Type="Int32" />
+          <Property Name="Osoite_id" Type="Int32" />
+          <Property Name="Puhelin_id" Type="Int32" />
+          <Property Name="Hoitaja_id" Type="Int32" />
+          <Property Name="Varaus_id" Type="Int32" />
+          <Property Name="Palvelu_id" Type="Int32" />
+          <NavigationProperty Name="Osoite" Relationship="Self.FK_Asiakas_ToTable" FromRole="Asiakas" ToRole="Osoite" />
+          <NavigationProperty Name="Puhelin" Relationship="Self.FK_Asiakas_ToTable_1" FromRole="Asiakas" ToRole="Puhelin" />
+          <NavigationProperty Name="Hoitaja" Relationship="Self.FK_Asiakas_ToTable_2" FromRole="Asiakas" ToRole="Hoitaja" />
+          <NavigationProperty Name="Varaus" Relationship="Self.FK_Asiakas_ToTable_3" FromRole="Asiakas" ToRole="Varaus" />
+          <NavigationProperty Name="Palvelu" Relationship="Self.FK_Asiakas_ToTable_4" FromRole="Asiakas" ToRole="Palvelu" />
+          <NavigationProperty Name="Kayttaja" Relationship="Self.FK_Asiakas_ToTable_5" FromRole="Asiakas" ToRole="Kayttaja" />
+          <NavigationProperty Name="Hoitaja1" Relationship="Self.FK_Hoitaja_ToTable_2" FromRole="Asiakas" ToRole="Hoitaja" />
+          <NavigationProperty Name="Kayttaja1" Relationship="Self.FK_Kayttaja_ToTable_1" FromRole="Asiakas" ToRole="Kayttaja" />
+          <NavigationProperty Name="Osoite1" Relationship="Self.FK_Osoite_ToTable" FromRole="Asiakas" ToRole="Osoite" />
+          <NavigationProperty Name="Palvelu1" Relationship="Self.FK_Palvelu_ToTable_1" FromRole="Asiakas" ToRole="Palvelu" />
+          <NavigationProperty Name="Puhelin1" Relationship="Self.FK_Puhelin_ToTable" FromRole="Asiakas" ToRole="Puhelin" />
+          <NavigationProperty Name="Varaus1" Relationship="Self.FK_Varaus_ToTable_3" FromRole="Asiakas" ToRole="Varaus" />
+        </EntityType>
+        <EntityType Name="Henkilokunta">
+          <Key>
+            <PropertyRef Name="Henkilokunta_id" />
+          </Key>
+          <Property Name="Henkilokunta_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Etunimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sukunimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Henkilotunnus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Huomiot" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Sahkoposti" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Käyttäjä_id" Type="Int32" />
+          <Property Name="Osoite_id" Type="Int32" />
+          <Property Name="Puhelin_id" Type="Int32" />
+          <Property Name="Asiakas_id" Type="Int32" />
+          <Property Name="Hoitaja_id" Type="Int32" />
+          <Property Name="Varaus_id" Type="Int32" />
+          <Property Name="Palvelu_id" Type="Int32" />
+          <Property Name="Kurssi_id" Type="Int32" />
+          <NavigationProperty Name="Osoite" Relationship="Self.FK_Henkilokunta_ToTable" FromRole="Henkilokunta" ToRole="Osoite" />
+          <NavigationProperty Name="Puhelin" Relationship="Self.FK_Henkilokunta_ToTable_1" FromRole="Henkilokunta" ToRole="Puhelin" />
+          <NavigationProperty Name="Hoitaja" Relationship="Self.FK_Henkilokunta_ToTable_2" FromRole="Henkilokunta" ToRole="Hoitaja" />
+          <NavigationProperty Name="Varaus" Relationship="Self.FK_Henkilokunta_ToTable_3" FromRole="Henkilokunta" ToRole="Varaus" />
+          <NavigationProperty Name="Palvelu" Relationship="Self.FK_Henkilokunta_ToTable_4" FromRole="Henkilokunta" ToRole="Palvelu" />
+          <NavigationProperty Name="Kayttaja" Relationship="Self.FK_Henkilokunta_ToTable_5" FromRole="Henkilokunta" ToRole="Kayttaja" />
+          <NavigationProperty Name="Kayttaja1" Relationship="Self.FK_Kayttaja_ToTable_3" FromRole="Henkilokunta" ToRole="Kayttaja" />
+          <NavigationProperty Name="Osoite1" Relationship="Self.FK_Osoite_ToTable_2" FromRole="Henkilokunta" ToRole="Osoite" />
+          <NavigationProperty Name="Puhelin1" Relationship="Self.FK_Puhelin_ToTable_2" FromRole="Henkilokunta" ToRole="Puhelin" />
+          <NavigationProperty Name="Varaus1" Relationship="Self.FK_Varaus_ToTable_4" FromRole="Henkilokunta" ToRole="Varaus" />
+        </EntityType>
+        <EntityType Name="Hoitaja">
+          <Key>
+            <PropertyRef Name="Hoitaja_id" />
+          </Key>
+          <Property Name="Hoitaja_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Etunimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sukunimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Henkilotunnus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Huomiot" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Sahkoposti" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Käyttäjä_id" Type="Int32" />
+          <Property Name="Osoite_id" Type="Int32" />
+          <Property Name="Puhelin_id" Type="Int32" />
+          <Property Name="Asiakas_id" Type="Int32" />
+          <Property Name="Varaus_id" Type="Int32" />
+          <Property Name="Palvelu_id" Type="Int32" />
+          <NavigationProperty Name="Asiakas" Relationship="Self.FK_Asiakas_ToTable_2" FromRole="Hoitaja" ToRole="Asiakas" />
+          <NavigationProperty Name="Asiakas1" Relationship="Self.FK_Hoitaja_ToTable_2" FromRole="Hoitaja" ToRole="Asiakas" />
+          <NavigationProperty Name="Henkilokunta" Relationship="Self.FK_Henkilokunta_ToTable_2" FromRole="Hoitaja" ToRole="Henkilokunta" />
+          <NavigationProperty Name="Osoite" Relationship="Self.FK_Hoitaja_ToTable" FromRole="Hoitaja" ToRole="Osoite" />
+          <NavigationProperty Name="Puhelin" Relationship="Self.FK_Hoitaja_ToTable_1" FromRole="Hoitaja" ToRole="Puhelin" />
+          <NavigationProperty Name="Varaus" Relationship="Self.FK_Hoitaja_ToTable_3" FromRole="Hoitaja" ToRole="Varaus" />
+          <NavigationProperty Name="Palvelu" Relationship="Self.FK_Hoitaja_ToTable_4" FromRole="Hoitaja" ToRole="Palvelu" />
+          <NavigationProperty Name="Kayttaja" Relationship="Self.FK_Hoitaja_ToTable_5" FromRole="Hoitaja" ToRole="Kayttaja" />
+          <NavigationProperty Name="Kayttaja1" Relationship="Self.FK_Kayttaja_ToTable_2" FromRole="Hoitaja" ToRole="Kayttaja" />
+          <NavigationProperty Name="Osoite1" Relationship="Self.FK_Osoite_ToTable_1" FromRole="Hoitaja" ToRole="Osoite" />
+          <NavigationProperty Name="Palvelu1" Relationship="Self.FK_Palvelu_ToTable" FromRole="Hoitaja" ToRole="Palvelu" />
+          <NavigationProperty Name="Puhelin1" Relationship="Self.FK_Puhelin_ToTable_1" FromRole="Hoitaja" ToRole="Puhelin" />
+          <NavigationProperty Name="Varaus1" Relationship="Self.FK_Varaus_ToTable" FromRole="Hoitaja" ToRole="Varaus" />
+        </EntityType>
+        <EntityType Name="Hoitopaikka">
+          <Key>
+            <PropertyRef Name="Hoitopaikka_id" />
+          </Key>
+          <Property Name="Hoitopaikka_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Hoitopaikan_Nimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hoitopaikan_Numero" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Toimipiste_id" Type="Int32" />
+          <Property Name="Varaus_id" Type="Int32" />
+          <NavigationProperty Name="Toimipiste" Relationship="Self.FK_Hoitopaikka_ToTable" FromRole="Hoitopaikka" ToRole="Toimipiste" />
+          <NavigationProperty Name="Varaus" Relationship="Self.FK_Hoitopaikka_ToTable_1" FromRole="Hoitopaikka" ToRole="Varaus" />
+          <NavigationProperty Name="Toimipiste1" Relationship="Self.FK_Toimipiste_ToTable" FromRole="Hoitopaikka" ToRole="Toimipiste" />
+          <NavigationProperty Name="Varaus1" Relationship="Self.FK_Varaus_ToTable_2" FromRole="Hoitopaikka" ToRole="Varaus" />
+        </EntityType>
+        <EntityType Name="Kayttaja">
+          <Key>
+            <PropertyRef Name="Käyttäjä_id" />
+          </Key>
+          <Property Name="Käyttäjä_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Käyttäjätunnus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Salasana" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Asiakas_id" Type="Int32" />
+          <Property Name="Hoitaja_Id" Type="Int32" />
+          <Property Name="Henkilokunta_id" Type="Int32" />
+          <NavigationProperty Name="Asiakas" Relationship="Self.FK_Asiakas_ToTable_5" FromRole="Kayttaja" ToRole="Asiakas" />
+          <NavigationProperty Name="Asiakas1" Relationship="Self.FK_Kayttaja_ToTable_1" FromRole="Kayttaja" ToRole="Asiakas" />
+          <NavigationProperty Name="Henkilokunta" Relationship="Self.FK_Henkilokunta_ToTable_5" FromRole="Kayttaja" ToRole="Henkilokunta" />
+          <NavigationProperty Name="Henkilokunta1" Relationship="Self.FK_Kayttaja_ToTable_3" FromRole="Kayttaja" ToRole="Henkilokunta" />
+          <NavigationProperty Name="Hoitaja" Relationship="Self.FK_Hoitaja_ToTable_5" FromRole="Kayttaja" ToRole="Hoitaja" />
+          <NavigationProperty Name="Hoitaja1" Relationship="Self.FK_Kayttaja_ToTable_2" FromRole="Kayttaja" ToRole="Hoitaja" />
+        </EntityType>
+        <EntityType Name="Osoite">
+          <Key>
+            <PropertyRef Name="Osoite_id" />
+          </Key>
+          <Property Name="Osoite_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Katuosoite" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Postinumero" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Postitoimipaikka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Asiakas_id" Type="Int32" />
+          <Property Name="Hoitaja_id" Type="Int32" />
+          <Property Name="Henkilokunta_id" Type="Int32" />
+          <Property Name="Toimipiste_id" Type="Int32" />
+          <NavigationProperty Name="Asiakas" Relationship="Self.FK_Asiakas_ToTable" FromRole="Osoite" ToRole="Asiakas" />
+          <NavigationProperty Name="Asiakas1" Relationship="Self.FK_Osoite_ToTable" FromRole="Osoite" ToRole="Asiakas" />
+          <NavigationProperty Name="Henkilokunta" Relationship="Self.FK_Henkilokunta_ToTable" FromRole="Osoite" ToRole="Henkilokunta" />
+          <NavigationProperty Name="Henkilokunta1" Relationship="Self.FK_Osoite_ToTable_2" FromRole="Osoite" ToRole="Henkilokunta" />
+          <NavigationProperty Name="Hoitaja" Relationship="Self.FK_Hoitaja_ToTable" FromRole="Osoite" ToRole="Hoitaja" />
+          <NavigationProperty Name="Hoitaja1" Relationship="Self.FK_Osoite_ToTable_1" FromRole="Osoite" ToRole="Hoitaja" />
+          <NavigationProperty Name="Toimipiste" Relationship="Self.FK_Osoite_ToTable_3" FromRole="Osoite" ToRole="Toimipiste" />
+          <NavigationProperty Name="Toimipiste1" Relationship="Self.FK_Toimipiste_ToTable1" FromRole="Osoite" ToRole="Toimipiste" />
+        </EntityType>
+        <EntityType Name="Palvelu">
+          <Key>
+            <PropertyRef Name="Palvelu_id" />
+          </Key>
+          <Property Name="Palvelu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Palvelun_Nimi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Palvelun_Kesto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Palvelun_Hinta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Asiakas_id" Type="Int32" />
+          <Property Name="Hoitaja_id" Type="Int32" />
+          <Property Name="Toimipiste_id" Type="Int32" />
+          <Property Name="Varaus_id" Type="Int32" />
+          <NavigationProperty Name="Asiakas" Relationship="Self.FK_Asiakas_ToTable_4" FromRole="Palvelu" ToRole="Asiakas" />
+          <NavigationProperty Name="Asiakas1" Relationship="Self.FK_Palvelu_ToTable_1" FromRole="Palvelu" ToRole="Asiakas" />
+          <NavigationProperty Name="Henkilokunta" Relationship="Self.FK_Henkilokunta_ToTable_4" FromRole="Palvelu" ToRole="Henkilokunta" />
+          <NavigationProperty Name="Hoitaja" Relationship="Self.FK_Hoitaja_ToTable_4" FromRole="Palvelu" ToRole="Hoitaja" />
+          <NavigationProperty Name="Hoitaja1" Relationship="Self.FK_Palvelu_ToTable" FromRole="Palvelu" ToRole="Hoitaja" />
+          <NavigationProperty Name="Toimipiste" Relationship="Self.FK_Palvelu_ToTable_2" FromRole="Palvelu" ToRole="Toimipiste" />
+          <NavigationProperty Name="Varaus" Relationship="Self.FK_Palvelu_ToTable_3" FromRole="Palvelu" ToRole="Varaus" />
+          <NavigationProperty Name="Varaus1" Relationship="Self.FK_Varaus_ToTable_1" FromRole="Palvelu" ToRole="Varaus" />
+        </EntityType>
+        <EntityType Name="Puhelin">
+          <Key>
+            <PropertyRef Name="Puhelin_id" />
+          </Key>
+          <Property Name="Puhelin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Puhelinnumero_1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Puhelinnumero_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Puhelinnumero_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Asiakas_id" Type="Int32" />
+          <Property Name="Hoitaja_id" Type="Int32" />
+          <Property Name="Henkilokunta_id" Type="Int32" />
+          <Property Name="Toimipiste_id" Type="Int32" />
+          <NavigationProperty Name="Asiakas" Relationship="Self.FK_Asiakas_ToTable_1" FromRole="Puhelin" ToRole="Asiakas" />
+          <NavigationProperty Name="Asiakas1" Relationship="Self.FK_Puhelin_ToTable" FromRole="Puhelin" ToRole="Asiakas" />
+          <NavigationProperty Name="Henkilokunta" Relationship="Self.FK_Henkilokunta_ToTable_1" FromRole="Puhelin" ToRole="Henkilokunta" />
+          <NavigationProperty Name="Henkilokunta1" Relationship="Self.FK_Puhelin_ToTable_2" FromRole="Puhelin" ToRole="Henkilokunta" />
+          <NavigationProperty Name="Hoitaja" Relationship="Self.FK_Hoitaja_ToTable_1" FromRole="Puhelin" ToRole="Hoitaja" />
+          <NavigationProperty Name="Hoitaja1" Relationship="Self.FK_Puhelin_ToTable_1" FromRole="Puhelin" ToRole="Hoitaja" />
+          <NavigationProperty Name="Toimipiste" Relationship="Self.FK_Puhelin_ToTable_3" FromRole="Puhelin" ToRole="Toimipiste" />
+          <NavigationProperty Name="Toimipiste1" Relationship="Self.FK_Toimipiste_ToTable_2" FromRole="Puhelin" ToRole="Toimipiste" />
+        </EntityType>
+        <EntityType Name="Toimipiste">
+          <Key>
+            <PropertyRef Name="Toimipiste_id" />
+          </Key>
+          <Property Name="Toimipiste_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Toimipiste_Nimi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Huomio" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Hoitopaikka_id" Type="Int32" />
+          <Property Name="Osoite_id" Type="Int32" />
+          <Property Name="Puhelin_id" Type="Int32" />
+          <NavigationProperty Name="Hoitopaikka" Relationship="Self.FK_Hoitopaikka_ToTable" FromRole="Toimipiste" ToRole="Hoitopaikka" />
+          <NavigationProperty Name="Hoitopaikka1" Relationship="Self.FK_Toimipiste_ToTable" FromRole="Toimipiste" ToRole="Hoitopaikka" />
+          <NavigationProperty Name="Osoite" Relationship="Self.FK_Osoite_ToTable_3" FromRole="Toimipiste" ToRole="Osoite" />
+          <NavigationProperty Name="Osoite1" Relationship="Self.FK_Toimipiste_ToTable1" FromRole="Toimipiste" ToRole="Osoite" />
+          <NavigationProperty Name="Palvelu" Relationship="Self.FK_Palvelu_ToTable_2" FromRole="Toimipiste" ToRole="Palvelu" />
+          <NavigationProperty Name="Puhelin" Relationship="Self.FK_Puhelin_ToTable_3" FromRole="Toimipiste" ToRole="Puhelin" />
+          <NavigationProperty Name="Puhelin1" Relationship="Self.FK_Toimipiste_ToTable_2" FromRole="Toimipiste" ToRole="Puhelin" />
+          <NavigationProperty Name="Varaus" Relationship="Self.FK_Varaus_ToTable_5" FromRole="Toimipiste" ToRole="Varaus" />
+        </EntityType>
+        <EntityType Name="Varaus">
+          <Key>
+            <PropertyRef Name="Varaus_id" />
+          </Key>
+          <Property Name="Varaus_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Palvelun_Nimi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Alku" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Loppu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="pvm" Type="DateTime" Precision="3" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="Huomio" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Hoitaja_id" Type="Int32" />
+          <Property Name="Hoitopaikka_id" Type="Int32" />
+          <Property Name="Asiakas_id" Type="Int32" />
+          <Property Name="Henkilokunta_id" Type="Int32" />
+          <Property Name="Toimipiste_id" Type="Int32" />
+          <Property Name="Palvelu_id" Type="Int32" />
+          <NavigationProperty Name="Asiakas" Relationship="Self.FK_Asiakas_ToTable_3" FromRole="Varaus" ToRole="Asiakas" />
+          <NavigationProperty Name="Asiakas1" Relationship="Self.FK_Varaus_ToTable_3" FromRole="Varaus" ToRole="Asiakas" />
+          <NavigationProperty Name="Henkilokunta" Relationship="Self.FK_Henkilokunta_ToTable_3" FromRole="Varaus" ToRole="Henkilokunta" />
+          <NavigationProperty Name="Henkilokunta1" Relationship="Self.FK_Varaus_ToTable_4" FromRole="Varaus" ToRole="Henkilokunta" />
+          <NavigationProperty Name="Hoitaja" Relationship="Self.FK_Hoitaja_ToTable_3" FromRole="Varaus" ToRole="Hoitaja" />
+          <NavigationProperty Name="Hoitaja1" Relationship="Self.FK_Varaus_ToTable" FromRole="Varaus" ToRole="Hoitaja" />
+          <NavigationProperty Name="Hoitopaikka" Relationship="Self.FK_Hoitopaikka_ToTable_1" FromRole="Varaus" ToRole="Hoitopaikka" />
+          <NavigationProperty Name="Hoitopaikka1" Relationship="Self.FK_Varaus_ToTable_2" FromRole="Varaus" ToRole="Hoitopaikka" />
+          <NavigationProperty Name="Palvelu" Relationship="Self.FK_Palvelu_ToTable_3" FromRole="Varaus" ToRole="Palvelu" />
+          <NavigationProperty Name="Palvelu1" Relationship="Self.FK_Varaus_ToTable_1" FromRole="Varaus" ToRole="Palvelu" />
+          <NavigationProperty Name="Toimipiste" Relationship="Self.FK_Varaus_ToTable_5" FromRole="Varaus" ToRole="Toimipiste" />
+        </EntityType>
+        <Association Name="FK_Asiakas_ToTable">
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="0..1" />
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osoite">
+              <PropertyRef Name="Osoite_id" />
+            </Principal>
+            <Dependent Role="Asiakas">
+              <PropertyRef Name="Osoite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asiakas_ToTable_1">
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="0..1" />
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puhelin">
+              <PropertyRef Name="Puhelin_id" />
+            </Principal>
+            <Dependent Role="Asiakas">
+              <PropertyRef Name="Puhelin_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asiakas_ToTable_2">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Asiakas">
+              <PropertyRef Name="Hoitaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asiakas_ToTable_3">
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="0..1" />
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Varaus">
+              <PropertyRef Name="Varaus_id" />
+            </Principal>
+            <Dependent Role="Asiakas">
+              <PropertyRef Name="Varaus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asiakas_ToTable_4">
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="0..1" />
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Palvelu">
+              <PropertyRef Name="Palvelu_id" />
+            </Principal>
+            <Dependent Role="Asiakas">
+              <PropertyRef Name="Palvelu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asiakas_ToTable_5">
+          <End Role="Kayttaja" Type="Self.Kayttaja" Multiplicity="0..1" />
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kayttaja">
+              <PropertyRef Name="Käyttäjä_id" />
+            </Principal>
+            <Dependent Role="Asiakas">
+              <PropertyRef Name="Käyttäjä_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitaja_ToTable_2">
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="0..1" />
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asiakas">
+              <PropertyRef Name="Asiakas_id" />
+            </Principal>
+            <Dependent Role="Hoitaja">
+              <PropertyRef Name="Asiakas_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayttaja_ToTable_1">
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="0..1" />
+          <End Role="Kayttaja" Type="Self.Kayttaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asiakas">
+              <PropertyRef Name="Asiakas_id" />
+            </Principal>
+            <Dependent Role="Kayttaja">
+              <PropertyRef Name="Asiakas_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Osoite_ToTable">
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="0..1" />
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asiakas">
+              <PropertyRef Name="Asiakas_id" />
+            </Principal>
+            <Dependent Role="Osoite">
+              <PropertyRef Name="Asiakas_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Palvelu_ToTable_1">
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="0..1" />
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asiakas">
+              <PropertyRef Name="Asiakas_id" />
+            </Principal>
+            <Dependent Role="Palvelu">
+              <PropertyRef Name="Asiakas_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Puhelin_ToTable">
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="0..1" />
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asiakas">
+              <PropertyRef Name="Asiakas_id" />
+            </Principal>
+            <Dependent Role="Puhelin">
+              <PropertyRef Name="Asiakas_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Varaus_ToTable_3">
+          <End Role="Asiakas" Type="Self.Asiakas" Multiplicity="0..1" />
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Asiakas">
+              <PropertyRef Name="Asiakas_id" />
+            </Principal>
+            <Dependent Role="Varaus">
+              <PropertyRef Name="Asiakas_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Henkilokunta_ToTable">
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="0..1" />
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osoite">
+              <PropertyRef Name="Osoite_id" />
+            </Principal>
+            <Dependent Role="Henkilokunta">
+              <PropertyRef Name="Osoite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Henkilokunta_ToTable_1">
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="0..1" />
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puhelin">
+              <PropertyRef Name="Puhelin_id" />
+            </Principal>
+            <Dependent Role="Henkilokunta">
+              <PropertyRef Name="Puhelin_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Henkilokunta_ToTable_2">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Henkilokunta">
+              <PropertyRef Name="Hoitaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Henkilokunta_ToTable_3">
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="0..1" />
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Varaus">
+              <PropertyRef Name="Varaus_id" />
+            </Principal>
+            <Dependent Role="Henkilokunta">
+              <PropertyRef Name="Varaus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Henkilokunta_ToTable_4">
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="0..1" />
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Palvelu">
+              <PropertyRef Name="Palvelu_id" />
+            </Principal>
+            <Dependent Role="Henkilokunta">
+              <PropertyRef Name="Palvelu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Henkilokunta_ToTable_5">
+          <End Role="Kayttaja" Type="Self.Kayttaja" Multiplicity="0..1" />
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kayttaja">
+              <PropertyRef Name="Käyttäjä_id" />
+            </Principal>
+            <Dependent Role="Henkilokunta">
+              <PropertyRef Name="Käyttäjä_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayttaja_ToTable_3">
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="0..1" />
+          <End Role="Kayttaja" Type="Self.Kayttaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Henkilokunta">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Principal>
+            <Dependent Role="Kayttaja">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Osoite_ToTable_2">
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="0..1" />
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Henkilokunta">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Principal>
+            <Dependent Role="Osoite">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Puhelin_ToTable_2">
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="0..1" />
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Henkilokunta">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Principal>
+            <Dependent Role="Puhelin">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Varaus_ToTable_4">
+          <End Role="Henkilokunta" Type="Self.Henkilokunta" Multiplicity="0..1" />
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Henkilokunta">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Principal>
+            <Dependent Role="Varaus">
+              <PropertyRef Name="Henkilokunta_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitaja_ToTable">
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="0..1" />
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osoite">
+              <PropertyRef Name="Osoite_id" />
+            </Principal>
+            <Dependent Role="Hoitaja">
+              <PropertyRef Name="Osoite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitaja_ToTable_1">
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="0..1" />
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puhelin">
+              <PropertyRef Name="Puhelin_id" />
+            </Principal>
+            <Dependent Role="Hoitaja">
+              <PropertyRef Name="Puhelin_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitaja_ToTable_3">
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="0..1" />
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Varaus">
+              <PropertyRef Name="Varaus_id" />
+            </Principal>
+            <Dependent Role="Hoitaja">
+              <PropertyRef Name="Varaus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitaja_ToTable_4">
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="0..1" />
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Palvelu">
+              <PropertyRef Name="Palvelu_id" />
+            </Principal>
+            <Dependent Role="Hoitaja">
+              <PropertyRef Name="Palvelu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitaja_ToTable_5">
+          <End Role="Kayttaja" Type="Self.Kayttaja" Multiplicity="0..1" />
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kayttaja">
+              <PropertyRef Name="Käyttäjä_id" />
+            </Principal>
+            <Dependent Role="Hoitaja">
+              <PropertyRef Name="Käyttäjä_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayttaja_ToTable_2">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Kayttaja" Type="Self.Kayttaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Kayttaja">
+              <PropertyRef Name="Hoitaja_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Osoite_ToTable_1">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Osoite">
+              <PropertyRef Name="Hoitaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Palvelu_ToTable">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Palvelu">
+              <PropertyRef Name="Hoitaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Puhelin_ToTable_1">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Puhelin">
+              <PropertyRef Name="Hoitaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Varaus_ToTable">
+          <End Role="Hoitaja" Type="Self.Hoitaja" Multiplicity="0..1" />
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitaja">
+              <PropertyRef Name="Hoitaja_id" />
+            </Principal>
+            <Dependent Role="Varaus">
+              <PropertyRef Name="Hoitaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitopaikka_ToTable">
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="0..1" />
+          <End Role="Hoitopaikka" Type="Self.Hoitopaikka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toimipiste">
+              <PropertyRef Name="Toimipiste_id" />
+            </Principal>
+            <Dependent Role="Hoitopaikka">
+              <PropertyRef Name="Toimipiste_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hoitopaikka_ToTable_1">
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="0..1" />
+          <End Role="Hoitopaikka" Type="Self.Hoitopaikka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Varaus">
+              <PropertyRef Name="Varaus_id" />
+            </Principal>
+            <Dependent Role="Hoitopaikka">
+              <PropertyRef Name="Varaus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Toimipiste_ToTable">
+          <End Role="Hoitopaikka" Type="Self.Hoitopaikka" Multiplicity="0..1" />
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitopaikka">
+              <PropertyRef Name="Hoitopaikka_id" />
+            </Principal>
+            <Dependent Role="Toimipiste">
+              <PropertyRef Name="Hoitopaikka_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Varaus_ToTable_2">
+          <End Role="Hoitopaikka" Type="Self.Hoitopaikka" Multiplicity="0..1" />
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoitopaikka">
+              <PropertyRef Name="Hoitopaikka_id" />
+            </Principal>
+            <Dependent Role="Varaus">
+              <PropertyRef Name="Hoitopaikka_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Osoite_ToTable_3">
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="0..1" />
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toimipiste">
+              <PropertyRef Name="Toimipiste_id" />
+            </Principal>
+            <Dependent Role="Osoite">
+              <PropertyRef Name="Toimipiste_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Toimipiste_ToTable1">
+          <End Role="Osoite" Type="Self.Osoite" Multiplicity="0..1" />
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Osoite">
+              <PropertyRef Name="Osoite_id" />
+            </Principal>
+            <Dependent Role="Toimipiste">
+              <PropertyRef Name="Osoite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Palvelu_ToTable_2">
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="0..1" />
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toimipiste">
+              <PropertyRef Name="Toimipiste_id" />
+            </Principal>
+            <Dependent Role="Palvelu">
+              <PropertyRef Name="Toimipiste_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Palvelu_ToTable_3">
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="0..1" />
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Varaus">
+              <PropertyRef Name="Varaus_id" />
+            </Principal>
+            <Dependent Role="Palvelu">
+              <PropertyRef Name="Varaus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Varaus_ToTable_1">
+          <End Role="Palvelu" Type="Self.Palvelu" Multiplicity="0..1" />
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Palvelu">
+              <PropertyRef Name="Palvelu_id" />
+            </Principal>
+            <Dependent Role="Varaus">
+              <PropertyRef Name="Palvelu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Puhelin_ToTable_3">
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="0..1" />
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toimipiste">
+              <PropertyRef Name="Toimipiste_id" />
+            </Principal>
+            <Dependent Role="Puhelin">
+              <PropertyRef Name="Toimipiste_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Toimipiste_ToTable_2">
+          <End Role="Puhelin" Type="Self.Puhelin" Multiplicity="0..1" />
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puhelin">
+              <PropertyRef Name="Puhelin_id" />
+            </Principal>
+            <Dependent Role="Toimipiste">
+              <PropertyRef Name="Puhelin_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Varaus_ToTable_5">
+          <End Role="Toimipiste" Type="Self.Toimipiste" Multiplicity="0..1" />
+          <End Role="Varaus" Type="Self.Varaus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toimipiste">
+              <PropertyRef Name="Toimipiste_id" />
+            </Principal>
+            <Dependent Role="Varaus">
+              <PropertyRef Name="Toimipiste_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="JohaMeriSQL1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Asiakas" EntityType="Self.Asiakas" />
+          <EntitySet Name="Henkilokunta" EntityType="Self.Henkilokunta" />
+          <EntitySet Name="Hoitaja" EntityType="Self.Hoitaja" />
+          <EntitySet Name="Hoitopaikka" EntityType="Self.Hoitopaikka" />
+          <EntitySet Name="Kayttaja" EntityType="Self.Kayttaja" />
+          <EntitySet Name="Osoite" EntityType="Self.Osoite" />
+          <EntitySet Name="Palvelu" EntityType="Self.Palvelu" />
+          <EntitySet Name="Puhelin" EntityType="Self.Puhelin" />
+          <EntitySet Name="Toimipiste" EntityType="Self.Toimipiste" />
+          <EntitySet Name="Varaus" EntityType="Self.Varaus" />
+          <AssociationSet Name="FK_Asiakas_ToTable" Association="Self.FK_Asiakas_ToTable">
+            <End Role="Osoite" EntitySet="Osoite" />
+            <End Role="Asiakas" EntitySet="Asiakas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asiakas_ToTable_1" Association="Self.FK_Asiakas_ToTable_1">
+            <End Role="Puhelin" EntitySet="Puhelin" />
+            <End Role="Asiakas" EntitySet="Asiakas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asiakas_ToTable_2" Association="Self.FK_Asiakas_ToTable_2">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Asiakas" EntitySet="Asiakas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asiakas_ToTable_3" Association="Self.FK_Asiakas_ToTable_3">
+            <End Role="Varaus" EntitySet="Varaus" />
+            <End Role="Asiakas" EntitySet="Asiakas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asiakas_ToTable_4" Association="Self.FK_Asiakas_ToTable_4">
+            <End Role="Palvelu" EntitySet="Palvelu" />
+            <End Role="Asiakas" EntitySet="Asiakas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asiakas_ToTable_5" Association="Self.FK_Asiakas_ToTable_5">
+            <End Role="Kayttaja" EntitySet="Kayttaja" />
+            <End Role="Asiakas" EntitySet="Asiakas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitaja_ToTable_2" Association="Self.FK_Hoitaja_ToTable_2">
+            <End Role="Asiakas" EntitySet="Asiakas" />
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayttaja_ToTable_1" Association="Self.FK_Kayttaja_ToTable_1">
+            <End Role="Asiakas" EntitySet="Asiakas" />
+            <End Role="Kayttaja" EntitySet="Kayttaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Osoite_ToTable" Association="Self.FK_Osoite_ToTable">
+            <End Role="Asiakas" EntitySet="Asiakas" />
+            <End Role="Osoite" EntitySet="Osoite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Palvelu_ToTable_1" Association="Self.FK_Palvelu_ToTable_1">
+            <End Role="Asiakas" EntitySet="Asiakas" />
+            <End Role="Palvelu" EntitySet="Palvelu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Puhelin_ToTable" Association="Self.FK_Puhelin_ToTable">
+            <End Role="Asiakas" EntitySet="Asiakas" />
+            <End Role="Puhelin" EntitySet="Puhelin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Varaus_ToTable_3" Association="Self.FK_Varaus_ToTable_3">
+            <End Role="Asiakas" EntitySet="Asiakas" />
+            <End Role="Varaus" EntitySet="Varaus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Henkilokunta_ToTable" Association="Self.FK_Henkilokunta_ToTable">
+            <End Role="Osoite" EntitySet="Osoite" />
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Henkilokunta_ToTable_1" Association="Self.FK_Henkilokunta_ToTable_1">
+            <End Role="Puhelin" EntitySet="Puhelin" />
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Henkilokunta_ToTable_2" Association="Self.FK_Henkilokunta_ToTable_2">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Henkilokunta_ToTable_3" Association="Self.FK_Henkilokunta_ToTable_3">
+            <End Role="Varaus" EntitySet="Varaus" />
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Henkilokunta_ToTable_4" Association="Self.FK_Henkilokunta_ToTable_4">
+            <End Role="Palvelu" EntitySet="Palvelu" />
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Henkilokunta_ToTable_5" Association="Self.FK_Henkilokunta_ToTable_5">
+            <End Role="Kayttaja" EntitySet="Kayttaja" />
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayttaja_ToTable_3" Association="Self.FK_Kayttaja_ToTable_3">
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+            <End Role="Kayttaja" EntitySet="Kayttaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Osoite_ToTable_2" Association="Self.FK_Osoite_ToTable_2">
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+            <End Role="Osoite" EntitySet="Osoite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Puhelin_ToTable_2" Association="Self.FK_Puhelin_ToTable_2">
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+            <End Role="Puhelin" EntitySet="Puhelin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Varaus_ToTable_4" Association="Self.FK_Varaus_ToTable_4">
+            <End Role="Henkilokunta" EntitySet="Henkilokunta" />
+            <End Role="Varaus" EntitySet="Varaus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitaja_ToTable" Association="Self.FK_Hoitaja_ToTable">
+            <End Role="Osoite" EntitySet="Osoite" />
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitaja_ToTable_1" Association="Self.FK_Hoitaja_ToTable_1">
+            <End Role="Puhelin" EntitySet="Puhelin" />
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitaja_ToTable_3" Association="Self.FK_Hoitaja_ToTable_3">
+            <End Role="Varaus" EntitySet="Varaus" />
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitaja_ToTable_4" Association="Self.FK_Hoitaja_ToTable_4">
+            <End Role="Palvelu" EntitySet="Palvelu" />
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitaja_ToTable_5" Association="Self.FK_Hoitaja_ToTable_5">
+            <End Role="Kayttaja" EntitySet="Kayttaja" />
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayttaja_ToTable_2" Association="Self.FK_Kayttaja_ToTable_2">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Kayttaja" EntitySet="Kayttaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Osoite_ToTable_1" Association="Self.FK_Osoite_ToTable_1">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Osoite" EntitySet="Osoite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Palvelu_ToTable" Association="Self.FK_Palvelu_ToTable">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Palvelu" EntitySet="Palvelu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Puhelin_ToTable_1" Association="Self.FK_Puhelin_ToTable_1">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Puhelin" EntitySet="Puhelin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Varaus_ToTable" Association="Self.FK_Varaus_ToTable">
+            <End Role="Hoitaja" EntitySet="Hoitaja" />
+            <End Role="Varaus" EntitySet="Varaus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitopaikka_ToTable" Association="Self.FK_Hoitopaikka_ToTable">
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+            <End Role="Hoitopaikka" EntitySet="Hoitopaikka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hoitopaikka_ToTable_1" Association="Self.FK_Hoitopaikka_ToTable_1">
+            <End Role="Varaus" EntitySet="Varaus" />
+            <End Role="Hoitopaikka" EntitySet="Hoitopaikka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Toimipiste_ToTable" Association="Self.FK_Toimipiste_ToTable">
+            <End Role="Hoitopaikka" EntitySet="Hoitopaikka" />
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Varaus_ToTable_2" Association="Self.FK_Varaus_ToTable_2">
+            <End Role="Hoitopaikka" EntitySet="Hoitopaikka" />
+            <End Role="Varaus" EntitySet="Varaus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Osoite_ToTable_3" Association="Self.FK_Osoite_ToTable_3">
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+            <End Role="Osoite" EntitySet="Osoite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Toimipiste_ToTable1" Association="Self.FK_Toimipiste_ToTable1">
+            <End Role="Osoite" EntitySet="Osoite" />
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Palvelu_ToTable_2" Association="Self.FK_Palvelu_ToTable_2">
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+            <End Role="Palvelu" EntitySet="Palvelu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Palvelu_ToTable_3" Association="Self.FK_Palvelu_ToTable_3">
+            <End Role="Varaus" EntitySet="Varaus" />
+            <End Role="Palvelu" EntitySet="Palvelu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Varaus_ToTable_1" Association="Self.FK_Varaus_ToTable_1">
+            <End Role="Palvelu" EntitySet="Palvelu" />
+            <End Role="Varaus" EntitySet="Varaus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Puhelin_ToTable_3" Association="Self.FK_Puhelin_ToTable_3">
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+            <End Role="Puhelin" EntitySet="Puhelin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Toimipiste_ToTable_2" Association="Self.FK_Toimipiste_ToTable_2">
+            <End Role="Puhelin" EntitySet="Puhelin" />
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Varaus_ToTable_5" Association="Self.FK_Varaus_ToTable_5">
+            <End Role="Toimipiste" EntitySet="Toimipiste" />
+            <End Role="Varaus" EntitySet="Varaus" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JohaMeriSQL1ModelStoreContainer" CdmEntityContainer="JohaMeriSQL1Entities">
+          <EntitySetMapping Name="Asiakas">
+            <EntityTypeMapping TypeName="JohaMeriSQL1Model.Asiakas">
+              <MappingFragment StoreEntitySet="Asiakas">
+                <ScalarProperty Name="Asiakas_id" ColumnName="Asiakas_id" />
+                <ScalarProperty Name="Etunimi" ColumnName="Etunimi" />
+                <ScalarProperty Name="Sukunimi" ColumnName="Sukunimi" />
+                <ScalarProperty Name="Henkilotunnus" ColumnName="Henkilotunnus" />
+                <ScalarProperty Name="Huomiot" ColumnName="Huomiot" />
+                <ScalarProperty Name="Sahkoposti" ColumnName="Sahkoposti" />
+                <ScalarProperty Name="Käyttäjä_id" ColumnName="Käyttäjä_id" />
+                <ScalarProperty Name="Osoite_id" ColumnName="Osoite_id" />
+                <ScalarProperty Name="Puhelin_id" ColumnName="Puhelin_id" />
+                <ScalarProperty Name="Hoitaja_id" ColumnName="Hoitaja_id" />
+                <ScalarProperty Name="Varaus_id" ColumnName="Varaus_id" />
+                <ScalarProperty Name="Palvelu_id" ColumnName="Palvelu_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Henkilokunta">
+            <EntityTypeMapping TypeName="JohaMeriSQL1Model.Henkilokunta">
+              <MappingFragment StoreEntitySet="Henkilokunta">
+                <ScalarProperty Name="Henkilokunta_id" ColumnName="Henkilokunta_id" />
+                <ScalarProperty Name="Etunimi" ColumnName="Etunimi" />
+                <ScalarProperty Name="Sukunimi" ColumnName="Sukunimi" />
+                <ScalarProperty Name="Henkilotunnus" ColumnName="Henkilotunnus" />
+                <ScalarProperty Name="Huomiot" ColumnName="Huomiot" />
+                <ScalarProperty Name="Sahkoposti" ColumnName="Sahkoposti" />
+                <ScalarProperty Name="Käyttäjä_id" ColumnName="Käyttäjä_id" />
+                <ScalarProperty Name="Osoite_id" ColumnName="Osoite_id" />
+                <ScalarProperty Name="Puhelin_id" ColumnName="Puhelin_id" />
+                <ScalarProperty Name="Asiakas_id" ColumnName="Asiakas_id" />
+                <ScalarProperty Name="Hoitaja_id" ColumnName="Hoitaja_id" />
+                <ScalarProperty Name="Varaus_id" ColumnName="Varaus_id" />
+                <ScalarProperty Name="Palvelu_id" ColumnName="Palvelu_id" />
+                <ScalarProperty Name="Kurssi_id" ColumnName="Kurssi_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hoitaja">
+            <EntityTypeMapping TypeName="JohaMeriSQL1Model.Hoitaja">
+              <MappingFragment StoreEntitySet="Hoitaja">
+                <ScalarProperty Name="Hoitaja_id" ColumnName="Hoitaja_id" />
+                <ScalarProperty Name="Etunimi" ColumnName="Etunimi" />
+                <ScalarProperty Name="Sukunimi" ColumnName="Sukunimi" />
+                <ScalarProperty Name="Henkilotunnus" ColumnName="Henkilotunnus" />
+                <ScalarProperty Name="Huomiot" ColumnName="Huomiot" />
+                <ScalarProperty Name="Sahkoposti" ColumnName="Sahkoposti" />
+                <ScalarProperty Name="Käyttäjä_id" ColumnName="Käyttäjä_id" />
+                <ScalarProperty Name="Osoite_id" ColumnName="Osoite_id" />
+                <ScalarProperty Name="Puhelin_id" ColumnName="Puhelin_id" />
+                <ScalarProperty Name="Asiakas_id" ColumnName="Asiakas_id" />
+                <ScalarProperty Name="Varaus_id" ColumnName="Varaus_id" />
+                <ScalarProperty Name="Palvelu_id" ColumnName="Palvelu_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hoitopaikka">
+            <EntityTypeMapping TypeName="JohaMeriSQL1Model.Hoitopaikka">
+              <MappingFragment StoreEntitySet="Hoitopaikka">
+                <ScalarProperty Name="Hoitopaikka_id" ColumnName="Hoitopaikka_id" />
+                <ScalarProperty Name="Hoitopaikan_Nimi" ColumnName="Hoitopaikan_Nimi" />
+                <ScalarProperty Name="Hoitopaikan_Numero" ColumnName="Hoitopaikan_Numero" />
+                <ScalarProperty Name="Toimipiste_id" ColumnName="Toimipiste_id" />
+                <ScalarProperty Name="Varaus_id" ColumnName="Varaus_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kayttaja">
+            <EntityTypeMapping TypeName="JohaMeriSQL1Model.Kayttaja">
+              <MappingFragment StoreEntitySet="Kayttaja">
+                <ScalarProperty Name="Käyttäjä_id" ColumnName="Käyttäjä_id" />
+                <ScalarProperty Name="Käyttäjätunnus" ColumnName="Käyttäjätunnus" />
+                <ScalarProperty Name="Salasana" ColumnName="Salasana" />
+                <ScalarProperty Name="Asiakas_id" ColumnName="Asiakas_id" />
+                <ScalarProperty Name="Hoitaja_Id" ColumnName="Hoitaja_Id" />
+                <ScalarProperty Name="Henkilokunta_id" ColumnName="Henkilokunta_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Osoite">
+            <EntityTypeMapping TypeName="JohaMeriSQL1Model.Osoite">
+              <MappingFragment StoreEntitySet="Osoite">
+                <ScalarProperty Name="Osoite_id" ColumnName="Osoite_id" />
+                <ScalarProperty Name="Katuosoite" ColumnName="Katuosoite" />
+                <ScalarProperty Name="Postinumero" ColumnName="Postinumero" />
+                <ScalarProperty Name="Postitoimipaikka" ColumnName="Postitoimipaikka" />
+                <ScalarProperty Name="Asiakas_id" ColumnName="Asiakas_id" />
+                <ScalarProperty Name="Hoitaja_id" ColumnName="Hoitaja_id" />
+                <ScalarProperty Name="Henkilokunta_id" ColumnName="Henkilokunta_id" />
+                <ScalarProperty Name="Toimipiste_id" ColumnName="Toimipiste_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Palvelu">
+            <EntityTypeMapping TypeName="JohaMeriSQL1Model.Palvelu">
+              <MappingFragment StoreEntitySet="Palvelu">
+                <ScalarProperty Name="Palvelu_id" ColumnName="Palvelu_id" />
+                <ScalarProperty Name="Palvelun_Nimi" ColumnName="Palvelun_Nimi" />
+                <ScalarProperty Name="Palvelun_Kesto" ColumnName="Palvelun_Kesto" />
+                <ScalarProperty Name="Palvelun_Hinta" ColumnName="Palvelun_Hinta" />
+                <ScalarProperty Name="Asiakas_id" ColumnName="Asiakas_id" />
+                <ScalarProperty Name="Hoitaja_id" ColumnName="Hoitaja_id" />
+                <ScalarProperty Name="Toimipiste_id" ColumnName="Toimipiste_id" />
+                <ScalarProperty Name="Varaus_id" ColumnName="Varaus_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Puhelin">
+            <EntityTypeMapping TypeName="JohaMeriSQL1Model.Puhelin">
+              <MappingFragment StoreEntitySet="Puhelin">
+                <ScalarProperty Name="Puhelin_id" ColumnName="Puhelin_id" />
+                <ScalarProperty Name="Puhelinnumero_1" ColumnName="Puhelinnumero_1" />
+                <ScalarProperty Name="Puhelinnumero_2" ColumnName="Puhelinnumero_2" />
+                <ScalarProperty Name="Puhelinnumero_3" ColumnName="Puhelinnumero_3" />
+                <ScalarProperty Name="Asiakas_id" ColumnName="Asiakas_id" />
+                <ScalarProperty Name="Hoitaja_id" ColumnName="Hoitaja_id" />
+                <ScalarProperty Name="Henkilokunta_id" ColumnName="Henkilokunta_id" />
+                <ScalarProperty Name="Toimipiste_id" ColumnName="Toimipiste_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Toimipiste">
+            <EntityTypeMapping TypeName="JohaMeriSQL1Model.Toimipiste">
+              <MappingFragment StoreEntitySet="Toimipiste">
+                <ScalarProperty Name="Toimipiste_id" ColumnName="Toimipiste_id" />
+                <ScalarProperty Name="Toimipiste_Nimi" ColumnName="Toimipiste_Nimi" />
+                <ScalarProperty Name="Huomio" ColumnName="Huomio" />
+                <ScalarProperty Name="Hoitopaikka_id" ColumnName="Hoitopaikka_id" />
+                <ScalarProperty Name="Osoite_id" ColumnName="Osoite_id" />
+                <ScalarProperty Name="Puhelin_id" ColumnName="Puhelin_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Varaus">
+            <EntityTypeMapping TypeName="JohaMeriSQL1Model.Varaus">
+              <MappingFragment StoreEntitySet="Varaus">
+                <ScalarProperty Name="Varaus_id" ColumnName="Varaus_id" />
+                <ScalarProperty Name="Palvelun_Nimi" ColumnName="Palvelun_Nimi" />
+                <ScalarProperty Name="Alku" ColumnName="Alku" />
+                <ScalarProperty Name="Loppu" ColumnName="Loppu" />
+                <ScalarProperty Name="pvm" ColumnName="pvm" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Huomio" ColumnName="Huomio" />
+                <ScalarProperty Name="Hoitaja_id" ColumnName="Hoitaja_id" />
+                <ScalarProperty Name="Hoitopaikka_id" ColumnName="Hoitopaikka_id" />
+                <ScalarProperty Name="Asiakas_id" ColumnName="Asiakas_id" />
+                <ScalarProperty Name="Henkilokunta_id" ColumnName="Henkilokunta_id" />
+                <ScalarProperty Name="Toimipiste_id" ColumnName="Toimipiste_id" />
+                <ScalarProperty Name="Palvelu_id" ColumnName="Palvelu_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
