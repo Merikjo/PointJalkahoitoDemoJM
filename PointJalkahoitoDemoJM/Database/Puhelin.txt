@@ -1,0 +1,17 @@
+CREATE TABLE [dbo].[Puhelin] (
+    [Puhelin_id]      INT           IDENTITY (1, 1) NOT NULL,
+    [Puhelinnumero_1] NVARCHAR (20) NULL,
+    [Puhelinnumero_2] NVARCHAR (20) NULL,
+    [Puhelinnumero_3] NVARCHAR (20) NULL,
+    [Asiakas_id]      INT           NULL,
+    [Hoitaja_id]      INT           NULL,
+    [Henkilokunta_id] INT           NULL,
+	[Toimipiste_id]		INT NULL,
+   
+    PRIMARY KEY CLUSTERED ([Puhelin_id] ASC),
+    CONSTRAINT [FK_Puhelin_ToTable] FOREIGN KEY ([Asiakas_id]) REFERENCES [dbo].[Asiakas] ([Asiakas_id]),
+    CONSTRAINT [FK_Puhelin_ToTable_1] FOREIGN KEY ([Hoitaja_id]) REFERENCES [dbo].[Hoitaja] ([Hoitaja_id]),
+    CONSTRAINT [FK_Puhelin_ToTable_2] FOREIGN KEY ([Henkilokunta_id]) REFERENCES [dbo].[Henkilokunta] ([Henkilokunta_id]),
+	CONSTRAINT [FK_Puhelin_ToTable_3] FOREIGN KEY ([Toimipiste_id]) REFERENCES [dbo].[Toimipiste] ([Toimipiste_id])
+   
+);

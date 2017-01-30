@@ -1,0 +1,15 @@
+CREATE TABLE [dbo].[Palvelu] (
+    [Palvelu_id]     INT           IDENTITY (1, 1) NOT NULL,
+    [Palvelun_Nimi]  NVARCHAR (20) NULL,
+    [Palvelun_Kesto] VARCHAR (20)  NULL,
+	[Palvelun_Hinta] VARCHAR (20)  NULL,
+    [Asiakas_id]     INT           NULL,
+    [Hoitaja_id]     INT           NULL,
+    [Toimipiste_id]  INT           NULL,
+    [Varaus_id]      INT           NULL,
+    PRIMARY KEY CLUSTERED ([Palvelu_id] ASC),
+    CONSTRAINT [FK_Palvelu_ToTable] FOREIGN KEY ([Hoitaja_id]) REFERENCES [dbo].[Hoitaja] ([Hoitaja_id]),
+    CONSTRAINT [FK_Palvelu_ToTable_1] FOREIGN KEY ([Asiakas_id]) REFERENCES [dbo].[Asiakas] ([Asiakas_id]),
+    CONSTRAINT [FK_Palvelu_ToTable_2] FOREIGN KEY ([Toimipiste_id]) REFERENCES [dbo].[Toimipiste] ([Toimipiste_id]),
+    CONSTRAINT [FK_Palvelu_ToTable_3] FOREIGN KEY ([Varaus_id]) REFERENCES [dbo].[Varaus] ([Varaus_id])
+);

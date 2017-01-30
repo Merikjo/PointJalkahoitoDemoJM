@@ -1,0 +1,22 @@
+CREATE TABLE [dbo].[Asiakas] (
+    [Asiakas_id]       INT            IDENTITY (1, 1) NOT NULL,
+    [Etunimi]          NVARCHAR (50)  NULL,
+    [Sukunimi]         NVARCHAR (50)  NULL,
+    [Henkilotunnus]    NVARCHAR (20)  NULL,
+    [Huomiot]          NVARCHAR (300) NULL,
+	[Sahkoposti]	   NVARCHAR (100) NULL,
+	[Käyttäjä_id]INT			  NULL,	
+    [Osoite_id]        INT            NULL,
+    [Puhelin_id]       INT            NULL,
+    [Hoitaja_id]       INT            NULL,
+    [Varaus_id]        INT            NULL,
+    [Palvelu_id]       INT            NULL,
+   
+    PRIMARY KEY CLUSTERED ([Asiakas_id] ASC),
+    CONSTRAINT [FK_Asiakas_ToTable] FOREIGN KEY ([Osoite_id]) REFERENCES [dbo].[Osoite] ([Osoite_id]),
+    CONSTRAINT [FK_Asiakas_ToTable_1] FOREIGN KEY ([Puhelin_id]) REFERENCES [dbo].[Puhelin] ([Puhelin_id]),
+    CONSTRAINT [FK_Asiakas_ToTable_2] FOREIGN KEY ([Hoitaja_id]) REFERENCES [dbo].[Hoitaja] ([Hoitaja_id]),
+    CONSTRAINT [FK_Asiakas_ToTable_3] FOREIGN KEY ([Varaus_id]) REFERENCES [dbo].[Varaus] ([Varaus_id]),
+    CONSTRAINT [FK_Asiakas_ToTable_4] FOREIGN KEY ([Palvelu_id]) REFERENCES [dbo].[Palvelu] ([Palvelu_id]),
+    CONSTRAINT [FK_Asiakas_ToTable_5] FOREIGN KEY ([Käyttäjä_id]) REFERENCES [dbo].[Kayttaja] ([Käyttäjä_id])
+);

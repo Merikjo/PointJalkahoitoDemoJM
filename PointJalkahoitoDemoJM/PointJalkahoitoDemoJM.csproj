@@ -270,6 +270,16 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Database\Asiakas.txt" />
+    <Content Include="Database\Henkilokunta.txt" />
+    <Content Include="Database\Hoitaja.txt" />
+    <Content Include="Database\Hoitopaikka.txt" />
+    <Content Include="Database\Kayttaja.txt" />
+    <Content Include="Database\Osoite.txt" />
+    <Content Include="Database\Palvelu.txt" />
+    <Content Include="Database\Puhelin.txt" />
+    <Content Include="Database\Toimipiste.txt" />
+    <Content Include="Database\Varaus.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

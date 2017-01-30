@@ -1,0 +1,16 @@
+CREATE TABLE [dbo].[Osoite] (
+    [Osoite_id]        INT            IDENTITY (1, 1) NOT NULL,
+    [Katuosoite]       NVARCHAR (100) NULL,
+    [Postinumero]      NVARCHAR (10)  NULL,
+    [Postitoimipaikka] NVARCHAR (50)  NULL,
+	[Asiakas_id]      INT           NULL,
+    [Hoitaja_id]      INT           NULL,
+    [Henkilokunta_id] INT           NULL,
+	[Toimipiste_id] INT NULL,
+   
+    PRIMARY KEY CLUSTERED ([Osoite_id] ASC),
+	CONSTRAINT [FK_Osoite_ToTable] FOREIGN KEY ([Asiakas_id]) REFERENCES [dbo].[Asiakas] ([Asiakas_id]),
+	CONSTRAINT [FK_Osoite_ToTable_1] FOREIGN KEY ([Hoitaja_id]) REFERENCES [dbo].[Hoitaja] ([Hoitaja_id]),
+    CONSTRAINT [FK_Osoite_ToTable_2] FOREIGN KEY ([Henkilokunta_id]) REFERENCES [dbo].[Henkilokunta] ([Henkilokunta_id]),
+	CONSTRAINT [FK_Osoite_ToTable_3] FOREIGN KEY ([Toimipiste_id]) REFERENCES [dbo].[Toimipiste] ([Toimipiste_id])
+);

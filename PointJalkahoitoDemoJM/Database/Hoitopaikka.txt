@@ -1,0 +1,12 @@
+CREATE TABLE [dbo].[Hoitopaikka] (
+    [Hoitopaikka_id]       INT            IDENTITY (1, 1) NOT NULL,
+    [Hoitopaikan_Nimi] NVARCHAR (50)  NULL,
+    [Hoitopaikan_Numero] NVARCHAR (10)  NULL,  
+	[Toimipiste_id]	   INT			  NULL,	   
+    [Varaus_id]        INT            NULL,
+    
+    PRIMARY KEY CLUSTERED ([Hoitopaikka_id] ASC),
+	CONSTRAINT [FK_Hoitopaikka_ToTable] FOREIGN KEY ([Toimipiste_id]) REFERENCES [dbo].[Toimipiste] ([Toimipiste_id]),
+	CONSTRAINT [FK_Hoitopaikka_ToTable_1] FOREIGN KEY ([Varaus_id]) REFERENCES [dbo].[Varaus] ([Varaus_id])
+
+);

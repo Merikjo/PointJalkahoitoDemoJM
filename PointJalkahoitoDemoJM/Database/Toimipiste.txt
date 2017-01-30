@@ -1,0 +1,14 @@
+CREATE TABLE [dbo].[Toimipiste] (
+    [Toimipiste_id]     INT           IDENTITY (1, 1) NOT NULL,
+    [Toimipiste_Nimi] NVARCHAR (20) NULL,
+	[Huomio]		  NVARCHAR (300) NULL,
+    [Hoitopaikka_id]    INT           NULL,
+    [Osoite_id]         INT           NULL,
+    [Puhelin_id]        INT           NULL, 
+	
+    PRIMARY KEY CLUSTERED ([Toimipiste_id] ASC),
+    CONSTRAINT [FK_Toimipiste_ToTable] FOREIGN KEY ([Hoitopaikka_id]) REFERENCES [dbo].[Hoitopaikka] ([Hoitopaikka_id]),
+    CONSTRAINT [FK_Toimipiste_ToTable1] FOREIGN KEY ([Osoite_id]) REFERENCES [dbo].[Osoite] ([Osoite_id]),
+    CONSTRAINT [FK_Toimipiste_ToTable_2] FOREIGN KEY ([Puhelin_id]) REFERENCES [dbo].[Puhelin] ([Puhelin_id])
+    
+	);
