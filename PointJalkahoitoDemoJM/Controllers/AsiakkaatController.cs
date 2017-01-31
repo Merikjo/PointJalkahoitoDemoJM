@@ -21,6 +21,24 @@ namespace PointJalkahoitoDemoJM.Controllers
             return View(asiakas.ToList());
         }
 
+
+        //31.1.2017 Lisätty tietokantataulujen suodatukset:
+        public ActionResult OrderByFirstName()
+        {
+            var asiakkaat = from a in db.Asiakas
+                            orderby a.Etunimi ascending
+                            select a;
+            return View(asiakkaat);
+        }
+        public ActionResult OrderByLastName()
+        {
+            var asiakkaat = from a in db.Asiakas
+                            orderby a.Sukunimi ascending
+                            select a;
+            return View(asiakkaat);
+        }//23.5.2016 Lisätty
+    
+
         // GET: Asiakkaat/Details/5
         public ActionResult Details(int? id)
         {

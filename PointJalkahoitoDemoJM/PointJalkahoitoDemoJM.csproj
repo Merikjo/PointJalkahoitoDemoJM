@@ -193,6 +193,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2.7\ASP.NET WebForms\CS\Daypilot.Modal-2.7.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -266,6 +267,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="2.7\ASP.NET WebForms\VB\DayPilot.Modal-2.7.vb" />
+    <Content Include="2.7\JavaScript\daypilot-modal-2.7.js" />
+    <Content Include="2.7\License\LICENSE.txt" />
+    <Content Include="2.7\License\NOTICE.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -280,6 +285,8 @@
     <Content Include="Database\Puhelin.txt" />
     <Content Include="Database\Toimipiste.txt" />
     <Content Include="Database\Varaus.txt" />
+    <Content Include="Demo\Bin\DayPilot.Web.Mvc.dll" />
+    <Content Include="Demo\Bin\DayPilot.Web.Mvc.xml" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -299,6 +306,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PointCustomManagement.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\talvimarjat.jpg" />
     <Content Include="Models\PointCustomManagement.edmx.diagram">
       <DependentUpon>PointCustomManagement.edmx</DependentUpon>
     </Content>
@@ -316,6 +324,7 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\DayPilot\daypilot-all.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -325,6 +334,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\DayPilot\jquery-1.8.1.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />

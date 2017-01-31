@@ -35,5 +35,6 @@ namespace PointJalkahoitoDemoJM.Models
         public virtual DbSet<Puhelin> Puhelin { get; set; }
         public virtual DbSet<Toimipiste> Toimipiste { get; set; }
         public virtual DbSet<Varaus> Varaus { get; set; }
+        
     }
 }
