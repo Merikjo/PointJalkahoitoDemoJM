@@ -81,7 +81,7 @@
         <p style="padding-left:8px;font-size:12px">
             @Html.ActionLink("Uusi henkilökuntatieto", "Create")
         </p>
-        <table class="table" style="padding-left:8px;font-size:12px">
+        <table class="w3-table-all w3-striped w3-bordered" style="padding-left:8px;font-size:12px">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Kayttaja.Käyttäjätunnus)
@@ -140,9 +140,9 @@
                     </td>
                 
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Henkilokunta_id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Henkilokunta_id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Henkilokunta_id })
+                        @Html.ActionLink("Muokkaa", "Edit", new { id = item.Henkilokunta_id }) |
+                        @Html.ActionLink("Tiedot", "Details", new { id = item.Henkilokunta_id }) |
+                        @Html.ActionLink("Poista", "Delete", new { id = item.Henkilokunta_id })
                     </td>
                 </tr>
             }

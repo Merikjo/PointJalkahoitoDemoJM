@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Hoitopaikkahallinta</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Luo uusi hoitopaikkatieto", "Create")
 </p>
 <table class="table">
     <tr>
@@ -17,12 +17,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Hoitopaikan_Numero)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Toimipiste.Toimipiste_Nimi)
-        </th>
-        <th>
+        </th>*@
+        @*<th>
             @Html.DisplayNameFor(model => model.Varaus.Palvelun_Nimi)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -34,16 +34,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.Hoitopaikan_Numero)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Toimipiste.Toimipiste_Nimi)
-        </td>
-        <td>
+        </td>*@
+        @*<td>
             @Html.DisplayFor(modelItem => item.Varaus.Palvelun_Nimi)
-        </td>
+        </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Hoitopaikka_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Hoitopaikka_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Hoitopaikka_id })
+            @Html.ActionLink("Muokkaa", "Edit", new { id=item.Hoitopaikka_id }) |
+            @Html.ActionLink("Tiedot", "Details", new { id=item.Hoitopaikka_id }) |
+            @Html.ActionLink("POista", "Delete", new { id=item.Hoitopaikka_id })
         </td>
     </tr>
 }

@@ -11,7 +11,8 @@ namespace PointJalkahoitoDemoJM.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Puhelin
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,8 +23,9 @@ namespace PointJalkahoitoDemoJM.Models
             this.Hoitaja = new HashSet<Hoitaja>();
             this.Toimipiste1 = new HashSet<Toimipiste>();
         }
-    
+    // Muokattu näkymiä 31.1.2017
         public int Puhelin_id { get; set; }
+        [Display(Name = "PuhNro")]
         public string Puhelinnumero_1 { get; set; }
         public string Puhelinnumero_2 { get; set; }
         public string Puhelinnumero_3 { get; set; }

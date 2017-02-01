@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Palveluhallinta</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Luo uusi palvelutieto", "Create")
 </p>
 <table class="table">
     <tr>
@@ -20,18 +20,18 @@
         <th>
             @Html.DisplayNameFor(model => model.Palvelun_Hinta)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Asiakas1.Etunimi)
-        </th>
-        <th>
+        </th>*@
+        @*<th>
             @Html.DisplayNameFor(model => model.Hoitaja1.Etunimi)
-        </th>
-        <th>
+        </th>*@
+        @*<th>
             @Html.DisplayNameFor(model => model.Toimipiste.Toimipiste_Nimi)
-        </th>
-        <th>
+        </th>*@
+        @*<th>
             @Html.DisplayNameFor(model => model.Varaus.Palvelun_Nimi)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -46,22 +46,22 @@
         <td>
             @Html.DisplayFor(modelItem => item.Palvelun_Hinta)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Asiakas1.Etunimi)
-        </td>
-        <td>
+        </td>*@
+        @*<td>
             @Html.DisplayFor(modelItem => item.Hoitaja1.Etunimi)
-        </td>
-        <td>
+        </td>*@
+        @*<td>
             @Html.DisplayFor(modelItem => item.Toimipiste.Toimipiste_Nimi)
-        </td>
-        <td>
+        </td>*@
+        @*<td>
             @Html.DisplayFor(modelItem => item.Varaus.Palvelun_Nimi)
-        </td>
+        </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Palvelu_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Palvelu_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Palvelu_id })
+            @Html.ActionLink("Muokkaa", "Edit", new { id=item.Palvelu_id }) |
+            @Html.ActionLink("Tiedot", "Details", new { id=item.Palvelu_id }) |
+            @Html.ActionLink("Poista", "Delete", new { id=item.Palvelu_id })
         </td>
     </tr>
 }

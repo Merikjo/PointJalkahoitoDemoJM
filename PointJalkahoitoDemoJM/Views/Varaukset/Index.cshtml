@@ -4,16 +4,22 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Varaustenhallinta</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Luo uusi asiakasvaraus", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Palvelun_Nimi)
+            @Html.DisplayNameFor(model => model.Asiakas1.Etunimi)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Palvelu1.Palvelun_Nimi)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Palvelun_Nimi)
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Alku)
         </th>
@@ -22,30 +28,25 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.pvm)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Huomio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Asiakas1.Etunimi)
-        </th>
-        <th>
+        </th>             
+        @*<th>
             @Html.DisplayNameFor(model => model.Henkilokunta1.Etunimi)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Hoitaja1.Etunimi)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Hoitopaikka1.Hoitopaikan_Nimi)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Palvelu1.Palvelun_Nimi)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.Toimipiste.Toimipiste_Nimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Huomio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
         </th>
         <th></th>
     </tr>
@@ -53,8 +54,14 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Palvelun_Nimi)
+            @Html.DisplayFor(modelItem => item.Asiakas1.Etunimi)
         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Palvelu1.Palvelun_Nimi)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Palvelun_Nimi)
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Alku)
         </td>
@@ -63,30 +70,25 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.pvm)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Huomio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Asiakas1.Etunimi)
-        </td>
-        <td>
+        </td>        
+        @*<td>
             @Html.DisplayFor(modelItem => item.Henkilokunta1.Etunimi)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Hoitaja1.Etunimi)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Hoitopaikka1.Hoitopaikan_Nimi)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Palvelu1.Palvelun_Nimi)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.Toimipiste.Toimipiste_Nimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Huomio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Varaus_id }) |

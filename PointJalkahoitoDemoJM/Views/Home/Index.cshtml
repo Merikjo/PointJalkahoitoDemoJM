@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Home Page";
 }
 
@@ -33,7 +32,16 @@
         <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold;font-size:12px">
             
             <a href="/Index">Aloitussivu&raquo;</a>
-            <a href="/Asiakkaat">Asiakashallinta&raquo;</a>
+            <a href="/Asiakkaat">Asiakashallinta&raquo;</a>     
+            <a href="/Henkilokuntas">Henkilokuntahallinta&raquo;</a>
+            <a href="/Hoitajat">Hoitajahallinta&raquo;</a>
+            <a href="/Hoitopaikat">Hoitopaikkahallinta&raquo;</a>
+            <a href="/Kayttajat">Käyttäjähallinta&raquo;</a>
+            <a href="/Osoitteet">Osoitehallinta&raquo;</a>
+            <a href="/Palvelut">Palveluhallinta&raquo;</a>
+            <a href="/Puhelimet">Puhelinhallinta&raquo;</a>
+            <a href="/Toimipisteet">Toimipistehallinta&raquo;</a>
+            <a href="/Varaukset">Varaustenhallinta&raquo;</a>
             <div class="w3-accordion">
                 <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-text-black" id="myBtn">
                     # <i class="fa fa-caret-down"></i>
@@ -45,16 +53,6 @@
                     <a href="#">#</a>
                 </div>
             </div>
-            
-            <a href="/Henkilokuntas">Henkilokuntahallinta&raquo;</a>
-            <a href="/Hoitaja">Hoitajahallinta&raquo;</a>
-            <a href="/Hoitopaikat">Hoitopaikkahallinta&raquo;</a>
-            <a href="/Kayttajat">Käyttäjähallinta&raquo;</a>
-            <a href="/Osoitteet">Osoitehallinta&raquo;</a>
-            <a href="/Palvelut">Palveluhallinta&raquo;</a>
-            <a href="/Puhelimet">Puhelinhallinta&raquo;</a>
-            <a href="/Toimipisteet">Toimipistehallinta&raquo;</a>
-            <a href="/Varaukset">Varaustenhallinta&raquo;</a>
             <a href="#">#</a>
             <a href="#">#</a>
             <a href="#">#</a>
@@ -103,10 +101,10 @@
         <div class="w3-container w3-text-grey" id="kalenteri">
             <p>Kalenteri</p>
  
-        <div style="float:left; width: 150px;">
+        <div style="float:left; width:150px;">
             <div id="nav"></div>
         </div>
-        <div style="margin-left: 150px;">
+        <div style="margin-left:150px;">
             <div id="dp"></div>
         </div>
     
@@ -184,7 +182,7 @@
         </div>*@
 
         <!-- Subscribe section -->
-        <div class="w3-container w3-black w3-padding-32" style="height:50px">
+        <div class="w3-container w3-black w3-padding-4">
             <h1></h1>
             <p></p>
             @*<p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>

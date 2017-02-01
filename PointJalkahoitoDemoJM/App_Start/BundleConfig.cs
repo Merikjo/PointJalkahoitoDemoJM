@@ -21,7 +21,11 @@ namespace PointJalkahoitoDemoJM
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+            // Lisätty 1.2.2017
+            "~/Scripts/moment.min.js",
+                "~/Scripts/bootstrap-datetimepicker.js",
+                "~/Scripts/app.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

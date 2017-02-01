@@ -11,7 +11,8 @@ namespace PointJalkahoitoDemoJM.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Henkilokunta
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,8 +27,10 @@ namespace PointJalkahoitoDemoJM.Models
         public int Henkilokunta_id { get; set; }
         public string Etunimi { get; set; }
         public string Sukunimi { get; set; }
+        [Display(Name = "Henkilötunnus")]
         public string Henkilotunnus { get; set; }
         public string Huomiot { get; set; }
+        [Display(Name = "Sähköposti")]
         public string Sahkoposti { get; set; }
         public Nullable<int> Käyttäjä_id { get; set; }
         public Nullable<int> Osoite_id { get; set; }
