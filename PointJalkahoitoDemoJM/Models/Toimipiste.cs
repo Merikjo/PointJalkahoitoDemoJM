@@ -11,7 +11,8 @@ namespace PointJalkahoitoDemoJM.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Toimipiste
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,6 +26,7 @@ namespace PointJalkahoitoDemoJM.Models
         }
     
         public int Toimipiste_id { get; set; }
+        [Display(Name = "Toimipiste")]
         public string Toimipiste_Nimi { get; set; }
         public string Huomio { get; set; }
         public Nullable<int> Hoitopaikka_id { get; set; }

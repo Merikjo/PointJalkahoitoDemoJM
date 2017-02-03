@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PointJalkahoitoDemoJM.Models;
+using System.Globalization;
 
 namespace PointJalkahoitoDemoJM.Controllers
 {
@@ -39,7 +40,7 @@ namespace PointJalkahoitoDemoJM.Controllers
         // GET: Varaukset/Create
         public ActionResult Create()
         {
-            ViewBag.Asiakas_id = new SelectList(db.Asiakas, "Asiakas_id", "Etunimi");
+            ViewBag.Asiakas_id = new SelectList(db.Asiakas, "Asiakas_id", "Etunimi", "Sukunimi");
             ViewBag.Henkilokunta_id = new SelectList(db.Henkilokunta, "Henkilokunta_id", "Etunimi");
             ViewBag.Hoitaja_id = new SelectList(db.Hoitaja, "Hoitaja_id", "Etunimi");
             ViewBag.Hoitopaikka_id = new SelectList(db.Hoitopaikka, "Hoitopaikka_id", "Hoitopaikan_Nimi");
@@ -61,14 +62,37 @@ namespace PointJalkahoitoDemoJM.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+        // Lisätty aikamääre 1.2.12017
+            CultureInfo fiFi = new CultureInfo("fi-FI");
 
-            ViewBag.Asiakas_id = new SelectList(db.Asiakas, "Asiakas_id", "Etunimi", varaus.Asiakas_id);
+            ViewBag.Asiakas_id = new SelectList(db.Asiakas, "Asiakas_id", "Etunimi", "Sukunimi", varaus.Asiakas_id);
             ViewBag.Henkilokunta_id = new SelectList(db.Henkilokunta, "Henkilokunta_id", "Etunimi", varaus.Henkilokunta_id);
             ViewBag.Hoitaja_id = new SelectList(db.Hoitaja, "Hoitaja_id", "Etunimi", varaus.Hoitaja_id);
             ViewBag.Hoitopaikka_id = new SelectList(db.Hoitopaikka, "Hoitopaikka_id", "Hoitopaikan_Nimi", varaus.Hoitopaikka_id);
             ViewBag.Palvelu_id = new SelectList(db.Palvelu, "Palvelu_id", "Palvelun_Nimi", varaus.Palvelu_id);
             ViewBag.Toimipiste_id = new SelectList(db.Toimipiste, "Toimipiste_id", "Toimipiste_Nimi", varaus.Toimipiste_id);
             return View(varaus);
+        }
+
+        //Varauksen tietojen muuttaminen 1.2.2017
+        //https://www.youtube.com/watch?v=l06JSQDuOwo
+        //OHJE
+        //https://msdn.microsoft.com/fi-fi/data/jj592676
+
+        public ActionResult Resize(int id, DateTime pvm, string newStart, string newEnd)
+        {
+            using (var dp = new JohaMeriSQL1Entities())
+            {
+                var varaus = dp.Varaus.First(c => c.Varaus_id == id);
+
+                varaus.pvm = pvm;
+                varaus.Alku = newStart;
+                varaus.Loppu = newEnd;
+           
+                dp.SaveChanges();
+            }
+
+            return new EmptyResult();
         }
 
         // GET: Varaukset/Edit/5
@@ -83,7 +107,11 @@ namespace PointJalkahoitoDemoJM.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Asiakas_id = new SelectList(db.Asiakas, "Asiakas_id", "Etunimi", varaus.Asiakas_id);
+
+            // Lisätty aikamääre 1.2.12017
+            CultureInfo fiFi = new CultureInfo("fi-FI");
+
+            ViewBag.Asiakas_id = new SelectList(db.Asiakas, "Asiakas_id", "Etunimi", "Sukunimi", varaus.Asiakas_id);
             ViewBag.Henkilokunta_id = new SelectList(db.Henkilokunta, "Henkilokunta_id", "Etunimi", varaus.Henkilokunta_id);
             ViewBag.Hoitaja_id = new SelectList(db.Hoitaja, "Hoitaja_id", "Etunimi", varaus.Hoitaja_id);
             ViewBag.Hoitopaikka_id = new SelectList(db.Hoitopaikka, "Hoitopaikka_id", "Hoitopaikan_Nimi", varaus.Hoitopaikka_id);
@@ -105,7 +133,11 @@ namespace PointJalkahoitoDemoJM.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Asiakas_id = new SelectList(db.Asiakas, "Asiakas_id", "Etunimi", varaus.Asiakas_id);
+
+            // Lisätty aikamääre 1.2.12017
+            CultureInfo fiFi = new CultureInfo("fi-FI");
+
+            ViewBag.Asiakas_id = new SelectList(db.Asiakas, "Asiakas_id", "Etunimi", "Sukunimi", varaus.Asiakas_id);
             ViewBag.Henkilokunta_id = new SelectList(db.Henkilokunta, "Henkilokunta_id", "Etunimi", varaus.Henkilokunta_id);
             ViewBag.Hoitaja_id = new SelectList(db.Hoitaja, "Hoitaja_id", "Etunimi", varaus.Hoitaja_id);
             ViewBag.Hoitopaikka_id = new SelectList(db.Hoitopaikka, "Hoitopaikka_id", "Hoitopaikan_Nimi", varaus.Hoitopaikka_id);

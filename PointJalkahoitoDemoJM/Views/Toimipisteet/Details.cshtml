@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Tiedot</h2>
 
 <div>
     <h4>Toimipiste</h4>
@@ -18,21 +18,13 @@
             @Html.DisplayFor(model => model.Toimipiste_Nimi)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Huomio)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Huomio)
-        </dd>
-
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Hoitopaikka1.Hoitopaikan_Nimi)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Hoitopaikka1.Hoitopaikan_Nimi)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.Osoite1.Katuosoite)
@@ -50,9 +42,17 @@
             @Html.DisplayFor(model => model.Puhelin1.Puhelinnumero_1)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Huomio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Huomio)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Toimipiste_id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Muokkaa", "Edit", new { id = Model.Toimipiste_id }) |
+    @Html.ActionLink("Takaisin toimipistehallintaan", "Index")
 </p>

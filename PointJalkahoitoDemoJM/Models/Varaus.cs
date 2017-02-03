@@ -24,12 +24,16 @@ namespace PointJalkahoitoDemoJM.Models
             this.Hoitopaikka = new HashSet<Hoitopaikka>();
             this.Palvelu = new HashSet<Palvelu>();
         }
-    
+        //Lisätty DataFormat Syntax 3.2.2017
+        public string DataFormatString { get; set; }
         public int Varaus_id { get; set; }
         [Display(Name = "Palvelun Nimi")]
         public string Palvelun_Nimi { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public string Alku { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public string Loppu { get; set; }
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> pvm { get; set; }
         public Nullable<int> Type { get; set; }
         public string Huomio { get; set; }

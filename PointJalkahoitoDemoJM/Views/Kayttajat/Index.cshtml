@@ -4,54 +4,131 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<title>PointCollege Ajanvarausohjelmisto</title>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Käyttäjätunnus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Salasana)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Asiakas1.Etunimi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Henkilokunta1.Etunimi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hoitaja1.Etunimi)
-        </th>
-        <th></th>
-    </tr>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .w3-sidenav a {
+        font-family: "Roboto", sans-serif;
+    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Käyttäjätunnus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Salasana)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Asiakas1.Etunimi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Henkilokunta1.Etunimi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hoitaja1.Etunimi)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Käyttäjä_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Käyttäjä_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Käyttäjä_id })
-        </td>
-    </tr>
-}
+    body, h1, h2, h3, h4, h5, h6, .w3-wide {
+        font-family: "Montserrat", sans-serif;
+    }
+</style>
 
-</table>
+<body class="w3-content" style="max-width:1200px">
+
+    <!-- Sidenav/menu -->
+    <nav class="w3-sidenav w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidenav">
+        <div class="w3-container w3-padding-16">
+            <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-closebtn w3-hover-text-red"></i>
+            <h3 class="w3-wide" style="margin-top:100px"><b>PointCollege</b></h3>
+        </div>
+        <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold; font-size:15px">
+
+            <a href="/Index">Aloitussivu&raquo;</a>
+            <a href="/Asiakkaat">Asiakashallinta&raquo;</a>
+            <a href="/Henkilokuntas">Henkilökuntahallinta&raquo;</a>
+            <a href="/Hoitajat">Hoitajahallinta&raquo;</a>
+            <a href="/Hoitopaikat">Hoitopaikkahallinta&raquo;</a>
+            <a href="/Kayttajat">Käyttäjähallinta&raquo;</a>
+            <a href="/Osoitteet">Osoitehallinta&raquo;</a>
+            <a href="/Palvelut">Palveluhallinta&raquo;</a>
+            <a href="/Puhelimet">Puhelinhallinta&raquo;</a>
+            <a href="/Toimipisteet">Toimipistehallinta&raquo;</a>
+            <a href="/Varaukset">Varaustenhallinta&raquo;</a>
+            <a href="#">#</a>
+            <a href="#">#</a>
+            <a href="#">#</a>
+            <div class="w3-accordion">
+                <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-text-black" id="myBtn">
+                    # <i class="fa fa-caret-down"></i>
+                </a>
+                <div id="demoAcc" class="w3-accordion-content w3-padding-large w3-medium">
+                    <a href="#" class="w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>#</a>
+                    <a href="#">#</a>
+                    <a href="#">#</a>
+                    <a href="#">#</a>
+                </div>
+            </div>
+        </div>
+        <a href="#footer" class="w3-padding">Yhteystiedot</a>
+        <a href="javascript:void(0)" class="w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Tiedotteet</a>
+        <a href="#footer" class="w3-padding">Kirjaudu</a>
+    </nav>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+
+        <!-- Top header -->
+        <header class="w3-container w3-xlarge">
+            <p class="w3-left" style="margin-left:-8px;margin-top:50px;font-size:18px">Käyttäjähallinta</p>
+            <p class="w3-right">
+                <i class="fa fa-search"></i>
+            </p>
+        </header>
+
+        <p style="padding-left:8px;font-size:12px">
+            @Html.ActionLink("Luo uusi käyttäjätunnus", "Create")
+        </p>
+        <p style="padding-left:8px;font-size:12px">
+            <a href="/Asiakkaat/Create">Asiakastekisteröinti</a>
+        </p>
+        <table class="w3-table-all w3-striped w3-bordered" style="padding-left:8px;font-size:12px">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Käyttäjätunnus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Salasana)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Asiakas1.Etunimi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Henkilokunta1.Etunimi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Hoitaja1.Etunimi)
+                    </th>*@
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Käyttäjätunnus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Salasana)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Asiakas1.Etunimi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Henkilokunta1.Etunimi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Hoitaja1.Etunimi)
+                        </td>*@
+                    <td>
+                        @Html.ActionLink("Muokkaa", "Edit", new { id = item.Käyttäjä_id }) |
+                        @Html.ActionLink("Tiedot", "Details", new { id = item.Käyttäjä_id }) |
+                        @Html.ActionLink("Poista", "Delete", new { id = item.Käyttäjä_id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>

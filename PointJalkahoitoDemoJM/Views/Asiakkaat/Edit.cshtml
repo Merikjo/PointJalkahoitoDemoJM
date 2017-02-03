@@ -42,14 +42,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Huomiot, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Huomiot, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Huomiot, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.Sahkoposti, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Sahkoposti, new { htmlAttributes = new { @class = "form-control" } })
@@ -81,6 +73,14 @@
             </div>
         </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.Huomiot, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Huomiot, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Huomiot, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
         @*<div class="form-group">
             @Html.LabelFor(model => model.Hoitaja_id, "Hoitaja_id", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -105,6 +105,11 @@
             </div>
         </div>*@
 
+     
+
+
+
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Tallenna" class="btn btn-default" />
@@ -115,6 +120,13 @@
 
 <div>
     @Html.ActionLink("Takaisin asiakashallintaan", "Index")
+</div>
+<div>
+    <a href="/Kayttaja/Create">Luo käyttäjätieto</a>
+</div>
+
+<div>
+<input type="submit" value="Upload" onclick="location.href='@Url.Action("Create", "Osoitteet")'" />
 </div>
 
 @section Scripts {

@@ -4,8 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
+<h2>Asiakastiedot</h2>
+<p>
+    @Html.ActionLink("Tee uusi varaus", "Create", "Varaukset")
+</p>
 <div>
     <h4>Asiakas</h4>
     <hr />
@@ -99,8 +101,67 @@
         </dd>
 
     </dl>
-</div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Asiakas_id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Muokkaa", "Edit", new { id = Model.Asiakas_id }) |
+    @Html.ActionLink("Takaisin asiakashallintaan", "Index")
 </p>
+<h4>Asiakkaan hoitotiedot</h4>
+@*1.2.2017 Lisätty alitiedostot Palvelut*@
+
+<table class="table">
+    <tr>
+        <th>
+            Päivämäärä
+        </th>
+        <th>
+            Varausaika alkaa
+        </th>
+        <th>
+            Varausaika loppuu
+        </th>
+        <th>
+            Palvelun nimi
+        </th>
+        <th>
+            Palvelun kesto
+        </th>
+        <th>
+            Hoitajan nimi
+        </th>
+        <th>
+            Huomiot
+        </th>
+    </tr>
+    @foreach (var item in Model.Varaus1)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.pvm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alku)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loppu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Palvelu1.Palvelun_Nimi)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Palvelu1.Palvelun_Kesto)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Hoitaja1.Etunimi)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Asiakas1.Huomiot)
+            </td>
+
+        </tr>
+    }
+</table>
+</div>

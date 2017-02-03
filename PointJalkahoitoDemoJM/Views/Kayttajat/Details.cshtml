@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Tiedot</h2>
 
 <div>
-    <h4>Kayttaja</h4>
+    <h4>Käyttäjä</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -26,7 +26,11 @@
             @Html.DisplayFor(model => model.Salasana)
         </dd>
 
-        <dt>
+        Asiakas:   @Html.RadioButton("Käyttäjätunnus", "Asiakas")
+        Hoitaja: @Html.RadioButton("Käyttäjätunnus", "Hoitaja")
+        Henkilökunta: @Html.RadioButton("Käyttäjätunnus", "Henkilokunta")
+
+        @*<dt>
             @Html.DisplayNameFor(model => model.Asiakas1.Etunimi)
         </dt>
 
@@ -48,11 +52,11 @@
 
         <dd>
             @Html.DisplayFor(model => model.Hoitaja1.Etunimi)
-        </dd>
+        </dd>*@
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Käyttäjä_id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Muokkaa", "Edit", new { id = Model.Käyttäjä_id }) |
+    @Html.ActionLink("Takaisin käyttäjähallintaan", "Index")
 </p>

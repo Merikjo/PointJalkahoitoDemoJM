@@ -34,6 +34,7 @@ namespace PointJalkahoitoDemoJM.Models
         public string Huomiot { get; set; }
         [Display(Name = "Sähköposti")]
         public string Sahkoposti { get; set; }
+        public bool tiedotArkistoitu { get; set; }
         public Nullable<int> Käyttäjä_id { get; set; }
         public Nullable<int> Osoite_id { get; set; }
         public Nullable<int> Puhelin_id { get; set; }

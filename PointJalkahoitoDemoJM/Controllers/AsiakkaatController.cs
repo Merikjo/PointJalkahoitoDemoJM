@@ -12,6 +12,20 @@ namespace PointJalkahoitoDemoJM.Controllers
 {
     public class AsiakkaatController : Controller
     {
+
+        IList<Asiakas> asiakasList = new List<Asiakas>()
+        {new Asiakas(){ Asiakas_id=5, Etunimi="Kaija" }
+
+        };
+
+        // GET: Asiakkaat
+        public ActionResult AsiakasTotal()
+        {
+            ViewBag.TotalAsiakkaat = asiakasList.Count();
+
+            return View();
+        }
+
         private JohaMeriSQL1Entities db = new JohaMeriSQL1Entities();
 
         // GET: Asiakkaat
@@ -20,6 +34,8 @@ namespace PointJalkahoitoDemoJM.Controllers
             var asiakas = db.Asiakas.Include(a => a.Osoite).Include(a => a.Puhelin).Include(a => a.Hoitaja).Include(a => a.Varaus).Include(a => a.Palvelu).Include(a => a.Kayttaja);
             return View(asiakas.ToList());
         }
+
+       
 
 
         //31.1.2017 Lisätty tietokantataulujen suodatukset:

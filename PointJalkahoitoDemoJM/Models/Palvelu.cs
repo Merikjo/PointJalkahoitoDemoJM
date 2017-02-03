@@ -11,7 +11,8 @@ namespace PointJalkahoitoDemoJM.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Palvelu
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,8 +25,11 @@ namespace PointJalkahoitoDemoJM.Models
         }
     
         public int Palvelu_id { get; set; }
+        [Display(Name = "Palvelun Nimi")]
         public string Palvelun_Nimi { get; set; }
+        [Display(Name = "Palvelun Kesto")]
         public string Palvelun_Kesto { get; set; }
+        [Display(Name = "Palvelun Hinta")]
         public string Palvelun_Hinta { get; set; }
         public Nullable<int> Asiakas_id { get; set; }
         public Nullable<int> Hoitaja_id { get; set; }
@@ -36,6 +40,7 @@ namespace PointJalkahoitoDemoJM.Models
         public virtual ICollection<Asiakas> Asiakas { get; set; }
         public virtual Asiakas Asiakas1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [Display(Name = "Henkilökunta")]
         public virtual ICollection<Henkilokunta> Henkilokunta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hoitaja> Hoitaja { get; set; }
